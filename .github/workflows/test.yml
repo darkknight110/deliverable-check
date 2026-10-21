@@ -18,9 +18,27 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
       - name: 依赖（仅数据体检需要）
-        run: python -m pip install -q openpyxl
+        run: python -m pip install -q openpyxl pillow
       - name: 单元测试
         run: python -m unittest discover -s tests -v
+      - name: 演示素材可重新生成（脏表被拦 → 修好通过）
+        if: matrix.python == '3.11'
+        run: |
+          python tools/demo/capture_preflight.py --out /tmp/demo.json
+          python tools/make_preflight_gif.py --data /tmp/demo.json --out /tmp/demo.gif
+          test -s /tmp/demo.gif
+          python - <<'PY'
+          import json
+          from PIL import Image
+          d = json.load(open('/tmp/demo.json'))
+          assert d['steps'][0]['verdict'] == 'blocked', d['steps'][0]
+          assert d['steps'][-1]['verdict'] == 'clean', d['steps'][-1]
+          assert d['steps'][0]['numbers']['ratio'] > 2, d['steps'][0]['numbers']
+          im = Image.open('/tmp/demo.gif')
+          assert im.n_frames >= 10
+          print("演示素材 OK：", im.size, im.n_frames, "帧")
+          PY
+
       - name: 脏表必须阻断（负向对照）
         run: |
           python tools/make_dirty_fixture.py --out /tmp/dirty.xlsx

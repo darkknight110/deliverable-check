@@ -5,6 +5,11 @@
 
 全部是**可复跑的测量**，不是打分器。
 
+[![一张"看起来正常"的脏表被拦下：左为真实输出，右为算出来的数字](docs/demo-preflight-story.png)](docs/demo-preflight.gif)
+
+<sub>**首屏是静图**（脏表被拦 / 修好后通过）；**点图看动图**（1320×768，约 0.9MB）。
+左边的输出是真跑出来的，右边的 27,100.50 / 74,701.50 / ×2.76 也是真算出来的 —— 复跑：`python3 tools/demo/capture_preflight.py && python3 tools/make_preflight_gif.py`。</sub>
+
 **一条命令跑完**（按文件类型自动分派）：
 
 ```bash

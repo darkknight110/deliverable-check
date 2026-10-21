@@ -1,0 +1,44 @@
+{
+  "steps": [
+    {
+      "caption": "发出去之前先体检：这张表看起来很正常",
+      "cmd": "python3 tools/preflight.py 交付",
+      "lines": [
+        "交付前体检",
+        "· 数据：",
+        "    ⛔ 订单明细.xlsx [订单明细] 6 行 → blocked",
+        "      ⛔ 明细区里有 2 行小计/合计",
+        "      ⛔ 6 个单元格是「带千分位的文本数字」",
+        "      ⛔ 「金额（元）」的合计与明细对不上（差 20,500.50）",
+        "      ⛔ 「金额（元）」整列求和会放大到 2.76 倍",
+        "结论：⛔ 不可交付（先修阻断项）",
+        "FAIL preflight blocked: 4 blocking findings"
+      ],
+      "verdict": "blocked",
+      "numbers": {
+        "detail": 27100.5,
+        "naive": 74701.5,
+        "ratio": 2.756
+      }
+    },
+    {
+      "caption": "把小计移出明细、数字转成数值：结构问题，不是「再算一遍」",
+      "cmd": "# 修数据：移除小计行、统一数值格式",
+      "lines": [],
+      "verdict": "pending",
+      "numbers": null
+    },
+    {
+      "caption": "再跑一遍：0 阻断，可以交付",
+      "cmd": "python3 tools/preflight.py 交付",
+      "lines": [
+        "交付前体检",
+        "· 数据：",
+        "    ✓ 订单明细.xlsx [Sheet] 4 行 → clean",
+        "结论：可交付（警告项需人工确认）"
+      ],
+      "verdict": "clean",
+      "numbers": null
+    }
+  ]
+}
