@@ -1,0 +1,1442 @@
+{
+  "documents": [
+    {
+      "chars": 3840,
+      "sentences": 111,
+      "paragraphs": 1,
+      "avg_sentence_len": 78.4,
+      "avg_paragraph_len": 8852,
+      "headings_per_1k": 0.0,
+      "list_items": 14,
+      "list_ratio": 14.0,
+      "parallel_triples": 19,
+      "parallel_per_1k": 4.95,
+      "lexical": {
+        "管理黑话": 1,
+        "连接词": 2,
+        "对偶句式": 0,
+        "破折号": 5,
+        "形容词堆叠": 0
+      },
+      "lexical_per_1k": {
+        "管理黑话": 0.26,
+        "连接词": 0.52,
+        "对偶句式": 0.0,
+        "破折号": 1.3,
+        "形容词堆叠": 0.0
+      },
+      "certain_per_1k": 0.26,
+      "abstract_ratio": 0.171,
+      "path": "doc-6c6832584f",
+      "name": "今天吃啥不麻烦施工手册_V1.10.docx",
+      "version": [
+        1,
+        10
+      ],
+      "family": "施工手册"
+    },
+    {
+      "chars": 2368,
+      "sentences": 54,
+      "paragraphs": 1,
+      "avg_sentence_len": 98.2,
+      "avg_paragraph_len": 5379,
+      "headings_per_1k": 0.0,
+      "list_items": 14,
+      "list_ratio": 14.0,
+      "parallel_triples": 25,
+      "parallel_per_1k": 10.56,
+      "lexical": {
+        "管理黑话": 1,
+        "连接词": 0,
+        "对偶句式": 0,
+        "破折号": 1,
+        "形容词堆叠": 0
+      },
+      "lexical_per_1k": {
+        "管理黑话": 0.42,
+        "连接词": 0.0,
+        "对偶句式": 0.0,
+        "破折号": 0.42,
+        "形容词堆叠": 0.0
+      },
+      "certain_per_1k": 0.0,
+      "abstract_ratio": 0.093,
+      "path": "doc-3a0ec2c859",
+      "name": "今天吃啥不麻烦施工手册_V1.3.docx",
+      "version": [
+        1,
+        3
+      ],
+      "family": "施工手册"
+    },
+    {
+      "chars": 2361,
+      "sentences": 59,
+      "paragraphs": 1,
+      "avg_sentence_len": 88,
+      "avg_paragraph_len": 5277,
+      "headings_per_1k": 0.0,
+      "list_items": 14,
+      "list_ratio": 14.0,
+      "parallel_triples": 20,
+      "parallel_per_1k": 8.47,
+      "lexical": {
+        "管理黑话": 0,
+        "连接词": 0,
+        "对偶句式": 0,
+        "破折号": 2,
+        "形容词堆叠": 0
+      },
+      "lexical_per_1k": {
+        "管理黑话": 0.0,
+        "连接词": 0.0,
+        "对偶句式": 0.0,
+        "破折号": 0.85,
+        "形容词堆叠": 0.0
+      },
+      "certain_per_1k": 0.0,
+      "abstract_ratio": 0.085,
+      "path": "doc-4e6cdbbe9d",
+      "name": "今天吃啥不麻烦施工手册_V1.4.docx",
+      "version": [
+        1,
+        4
+      ],
+      "family": "施工手册"
+    },
+    {
+      "chars": 2638,
+      "sentences": 73,
+      "paragraphs": 1,
+      "avg_sentence_len": 80.0,
+      "avg_paragraph_len": 5945,
+      "headings_per_1k": 0.0,
+      "list_items": 14,
+      "list_ratio": 14.0,
+      "parallel_triples": 22,
+      "parallel_per_1k": 8.34,
+      "lexical": {
+        "管理黑话": 1,
+        "连接词": 1,
+        "对偶句式": 0,
+        "破折号": 3,
+        "形容词堆叠": 0
+      },
+      "lexical_per_1k": {
+        "管理黑话": 0.38,
+        "连接词": 0.38,
+        "对偶句式": 0.0,
+        "破折号": 1.14,
+        "形容词堆叠": 0.0
+      },
+      "certain_per_1k": 0.38,
+      "abstract_ratio": 0.11,
+      "path": "doc-ccafc68f35",
+      "name": "今天吃啥不麻烦施工手册_V1.5.docx",
+      "version": [
+        1,
+        5
+      ],
+      "family": "施工手册"
+    },
+    {
+      "chars": 3333,
+      "sentences": 89,
+      "paragraphs": 1,
+      "avg_sentence_len": 83.4,
+      "avg_paragraph_len": 7549,
+      "headings_per_1k": 0.0,
+      "list_items": 14,
+      "list_ratio": 14.0,
+      "parallel_triples": 18,
+      "parallel_per_1k": 5.4,
+      "lexical": {
+        "管理黑话": 1,
+        "连接词": 1,
+        "对偶句式": 0,
+        "破折号": 3,
+        "形容词堆叠": 0
+      },
+      "lexical_per_1k": {
+        "管理黑话": 0.3,
+        "连接词": 0.3,
+        "对偶句式": 0.0,
+        "破折号": 0.9,
+        "形容词堆叠": 0.0
+      },
+      "certain_per_1k": 0.3,
+      "abstract_ratio": 0.157,
+      "path": "doc-204a003d7a",
+      "name": "今天吃啥不麻烦施工手册_V1.6.docx",
+      "version": [
+        1,
+        6
+      ],
+      "family": "施工手册"
+    },
+    {
+      "chars": 3668,
+      "sentences": 103,
+      "paragraphs": 1,
+      "avg_sentence_len": 79.8,
+      "avg_paragraph_len": 8353,
+      "headings_per_1k": 0.0,
+      "list_items": 14,
+      "list_ratio": 14.0,
+      "parallel_triples": 19,
+      "parallel_per_1k": 5.18,
+      "lexical": {
+        "管理黑话": 1,
+        "连接词": 1,
+        "对偶句式": 0,
+        "破折号": 3,
+        "形容词堆叠": 0
+      },
+      "lexical_per_1k": {
+        "管理黑话": 0.27,
+        "连接词": 0.27,
+        "对偶句式": 0.0,
+        "破折号": 0.82,
+        "形容词堆叠": 0.0
+      },
+      "certain_per_1k": 0.27,
+      "abstract_ratio": 0.165,
+      "path": "doc-553900cbfd",
+      "name": "今天吃啥不麻烦施工手册_V1.7.docx",
+      "version": [
+        1,
+        7
+      ],
+      "family": "施工手册"
+    },
+    {
+      "chars": 3732,
+      "sentences": 106,
+      "paragraphs": 1,
+      "avg_sentence_len": 79.5,
+      "avg_paragraph_len": 8566,
+      "headings_per_1k": 0.0,
+      "list_items": 14,
+      "list_ratio": 14.0,
+      "parallel_triples": 20,
+      "parallel_per_1k": 5.36,
+      "lexical": {
+        "管理黑话": 1,
+        "连接词": 2,
+        "对偶句式": 0,
+        "破折号": 4,
+        "形容词堆叠": 0
+      },
+      "lexical_per_1k": {
+        "管理黑话": 0.27,
+        "连接词": 0.54,
+        "对偶句式": 0.0,
+        "破折号": 1.07,
+        "形容词堆叠": 0.0
+      },
+      "certain_per_1k": 0.27,
+      "abstract_ratio": 0.17,
+      "path": "doc-9fcd926f04",
+      "name": "今天吃啥不麻烦施工手册_V1.8.docx",
+      "version": [
+        1,
+        8
+      ],
+      "family": "施工手册"
+    },
+    {
+      "chars": 3815,
+      "sentences": 108,
+      "paragraphs": 1,
+      "avg_sentence_len": 79.5,
+      "avg_paragraph_len": 8727,
+      "headings_per_1k": 0.0,
+      "list_items": 14,
+      "list_ratio": 14.0,
+      "parallel_triples": 20,
+      "parallel_per_1k": 5.24,
+      "lexical": {
+        "管理黑话": 1,
+        "连接词": 2,
+        "对偶句式": 0,
+        "破折号": 5,
+        "形容词堆叠": 0
+      },
+      "lexical_per_1k": {
+        "管理黑话": 0.26,
+        "连接词": 0.52,
+        "对偶句式": 0.0,
+        "破折号": 1.31,
+        "形容词堆叠": 0.0
+      },
+      "certain_per_1k": 0.26,
+      "abstract_ratio": 0.167,
+      "path": "doc-d58e716dd4",
+      "name": "今天吃啥不麻烦施工手册_V1.9.docx",
+      "version": [
+        1,
+        9
+      ],
+      "family": "施工手册"
+    },
+    {
+      "chars": 9217,
+      "sentences": 206,
+      "paragraphs": 1,
+      "avg_sentence_len": 66.7,
+      "avg_paragraph_len": 14052,
+      "headings_per_1k": 0.0,
+      "list_items": 22,
+      "list_ratio": 22.0,
+      "parallel_triples": 51,
+      "parallel_per_1k": 5.53,
+      "lexical": {
+        "管理黑话": 11,
+        "连接词": 2,
+        "对偶句式": 0,
+        "破折号": 26,
+        "形容词堆叠": 0
+      },
+      "lexical_per_1k": {
+        "管理黑话": 1.19,
+        "连接词": 0.22,
+        "对偶句式": 0.0,
+        "破折号": 2.82,
+        "形容词堆叠": 0.0
+      },
+      "certain_per_1k": 0.54,
+      "abstract_ratio": 0.301,
+      "path": "doc-9920b7639c",
+      "name": "今天吃啥不麻烦设计方案_V1.10.docx",
+      "version": [
+        1,
+        10
+      ],
+      "family": "设计方案"
+    },
+    {
+      "chars": 9396,
+      "sentences": 210,
+      "paragraphs": 1,
+      "avg_sentence_len": 66.9,
+      "avg_paragraph_len": 14361,
+      "headings_per_1k": 0.0,
+      "list_items": 22,
+      "list_ratio": 22.0,
+      "parallel_triples": 51,
+      "parallel_per_1k": 5.43,
+      "lexical": {
+        "管理黑话": 11,
+        "连接词": 2,
+        "对偶句式": 0,
+        "破折号": 26,
+        "形容词堆叠": 0
+      },
+      "lexical_per_1k": {
+        "管理黑话": 1.17,
+        "连接词": 0.21,
+        "对偶句式": 0.0,
+        "破折号": 2.77,
+        "形容词堆叠": 0.0
+      },
+      "certain_per_1k": 0.53,
+      "abstract_ratio": 0.3,
+      "path": "doc-eaca59caa5",
+      "name": "今天吃啥不麻烦设计方案_V1.11.docx",
+      "version": [
+        1,
+        11
+      ],
+      "family": "设计方案"
+    },
+    {
+      "chars": 9672,
+      "sentences": 218,
+      "paragraphs": 1,
+      "avg_sentence_len": 66.7,
+      "avg_paragraph_len": 14860,
+      "headings_per_1k": 0.0,
+      "list_items": 22,
+      "list_ratio": 22.0,
+      "parallel_triples": 52,
+      "parallel_per_1k": 5.38,
+      "lexical": {
+        "管理黑话": 11,
+        "连接词": 2,
+        "对偶句式": 0,
+        "破折号": 26,
+        "形容词堆叠": 0
+      },
+      "lexical_per_1k": {
+        "管理黑话": 1.14,
+        "连接词": 0.21,
+        "对偶句式": 0.0,
+        "破折号": 2.69,
+        "形容词堆叠": 0.0
+      },
+      "certain_per_1k": 0.52,
+      "abstract_ratio": 0.294,
+      "path": "doc-144fe57da9",
+      "name": "今天吃啥不麻烦设计方案_V1.12.docx",
+      "version": [
+        1,
+        12
+      ],
+      "family": "设计方案"
+    },
+    {
+      "chars": 9966,
+      "sentences": 226,
+      "paragraphs": 1,
+      "avg_sentence_len": 66.6,
+      "avg_paragraph_len": 15368,
+      "headings_per_1k": 0.0,
+      "list_items": 22,
+      "list_ratio": 22.0,
+      "parallel_triples": 51,
+      "parallel_per_1k": 5.12,
+      "lexical": {
+        "管理黑话": 13,
+        "连接词": 2,
+        "对偶句式": 0,
+        "破折号": 29,
+        "形容词堆叠": 0
+      },
+      "lexical_per_1k": {
+        "管理黑话": 1.3,
+        "连接词": 0.2,
+        "对偶句式": 0.0,
+        "破折号": 2.91,
+        "形容词堆叠": 0.0
+      },
+      "certain_per_1k": 0.4,
+      "abstract_ratio": 0.288,
+      "path": "doc-b67bd80030",
+      "name": "今天吃啥不麻烦设计方案_V1.13.docx",
+      "version": [
+        1,
+        13
+      ],
+      "family": "设计方案"
+    },
+    {
+      "chars": 10071,
+      "sentences": 229,
+      "paragraphs": 1,
+      "avg_sentence_len": 66.4,
+      "avg_paragraph_len": 15544,
+      "headings_per_1k": 0.0,
+      "list_items": 22,
+      "list_ratio": 22.0,
+      "parallel_triples": 51,
+      "parallel_per_1k": 5.06,
+      "lexical": {
+        "管理黑话": 13,
+        "连接词": 2,
+        "对偶句式": 0,
+        "破折号": 29,
+        "形容词堆叠": 0
+      },
+      "lexical_per_1k": {
+        "管理黑话": 1.29,
+        "连接词": 0.2,
+        "对偶句式": 0.0,
+        "破折号": 2.88,
+        "形容词堆叠": 0.0
+      },
+      "certain_per_1k": 0.4,
+      "abstract_ratio": 0.284,
+      "path": "doc-7bc08d3e05",
+      "name": "今天吃啥不麻烦设计方案_V1.14.docx",
+      "version": [
+        1,
+        14
+      ],
+      "family": "设计方案"
+    },
+    {
+      "chars": 10182,
+      "sentences": 220,
+      "paragraphs": 1,
+      "avg_sentence_len": 70.3,
+      "avg_paragraph_len": 15780,
+      "headings_per_1k": 0.0,
+      "list_items": 22,
+      "list_ratio": 22.0,
+      "parallel_triples": 51,
+      "parallel_per_1k": 5.01,
+      "lexical": {
+        "管理黑话": 13,
+        "连接词": 2,
+        "对偶句式": 0,
+        "破折号": 30,
+        "形容词堆叠": 0
+      },
+      "lexical_per_1k": {
+        "管理黑话": 1.28,
+        "连接词": 0.2,
+        "对偶句式": 0.0,
+        "破折号": 2.95,
+        "形容词堆叠": 0.0
+      },
+      "certain_per_1k": 0.39,
+      "abstract_ratio": 0.241,
+      "path": "doc-f88d9b2bdf",
+      "name": "今天吃啥不麻烦设计方案_V1.15.docx",
+      "version": [
+        1,
+        15
+      ],
+      "family": "设计方案"
+    },
+    {
+      "chars": 10383,
+      "sentences": 227,
+      "paragraphs": 1,
+      "avg_sentence_len": 69.5,
+      "avg_paragraph_len": 16118,
+      "headings_per_1k": 0.0,
+      "list_items": 22,
+      "list_ratio": 22.0,
+      "parallel_triples": 51,
+      "parallel_per_1k": 4.91,
+      "lexical": {
+        "管理黑话": 12,
+        "连接词": 2,
+        "对偶句式": 0,
+        "破折号": 31,
+        "形容词堆叠": 0
+      },
+      "lexical_per_1k": {
+        "管理黑话": 1.16,
+        "连接词": 0.19,
+        "对偶句式": 0.0,
+        "破折号": 2.99,
+        "形容词堆叠": 0.0
+      },
+      "certain_per_1k": 0.48,
+      "abstract_ratio": 0.238,
+      "path": "doc-dd031384c4",
+      "name": "今天吃啥不麻烦设计方案_V1.16.docx",
+      "version": [
+        1,
+        16
+      ],
+      "family": "设计方案"
+    },
+    {
+      "chars": 10532,
+      "sentences": 231,
+      "paragraphs": 1,
+      "avg_sentence_len": 69.5,
+      "avg_paragraph_len": 16383,
+      "headings_per_1k": 0.0,
+      "list_items": 22,
+      "list_ratio": 22.0,
+      "parallel_triples": 51,
+      "parallel_per_1k": 4.84,
+      "lexical": {
+        "管理黑话": 12,
+        "连接词": 2,
+        "对偶句式": 0,
+        "破折号": 33,
+        "形容词堆叠": 0
+      },
+      "lexical_per_1k": {
+        "管理黑话": 1.14,
+        "连接词": 0.19,
+        "对偶句式": 0.0,
+        "破折号": 3.13,
+        "形容词堆叠": 0.0
+      },
+      "certain_per_1k": 0.57,
+      "abstract_ratio": 0.234,
+      "path": "doc-68e731cd9b",
+      "name": "今天吃啥不麻烦设计方案_V1.17.docx",
+      "version": [
+        1,
+        17
+      ],
+      "family": "设计方案"
+    },
+    {
+      "chars": 10687,
+      "sentences": 235,
+      "paragraphs": 1,
+      "avg_sentence_len": 69.5,
+      "avg_paragraph_len": 16682,
+      "headings_per_1k": 0.0,
+      "list_items": 22,
+      "list_ratio": 22.0,
+      "parallel_triples": 53,
+      "parallel_per_1k": 4.96,
+      "lexical": {
+        "管理黑话": 12,
+        "连接词": 2,
+        "对偶句式": 0,
+        "破折号": 34,
+        "形容词堆叠": 0
+      },
+      "lexical_per_1k": {
+        "管理黑话": 1.12,
+        "连接词": 0.19,
+        "对偶句式": 0.0,
+        "破折号": 3.18,
+        "形容词堆叠": 0.0
+      },
+      "certain_per_1k": 0.56,
+      "abstract_ratio": 0.234,
+      "path": "doc-afbef5278f",
+      "name": "今天吃啥不麻烦设计方案_V1.18.docx",
+      "version": [
+        1,
+        18
+      ],
+      "family": "设计方案"
+    },
+    {
+      "chars": 11103,
+      "sentences": 252,
+      "paragraphs": 1,
+      "avg_sentence_len": 67.5,
+      "avg_paragraph_len": 17378,
+      "headings_per_1k": 0.0,
+      "list_items": 22,
+      "list_ratio": 22.0,
+      "parallel_triples": 52,
+      "parallel_per_1k": 4.68,
+      "lexical": {
+        "管理黑话": 12,
+        "连接词": 2,
+        "对偶句式": 0,
+        "破折号": 36,
+        "形容词堆叠": 0
+      },
+      "lexical_per_1k": {
+        "管理黑话": 1.08,
+        "连接词": 0.18,
+        "对偶句式": 0.0,
+        "破折号": 3.24,
+        "形容词堆叠": 0.0
+      },
+      "certain_per_1k": 0.54,
+      "abstract_ratio": 0.226,
+      "path": "doc-050da1f2ff",
+      "name": "今天吃啥不麻烦设计方案_V1.19.docx",
+      "version": [
+        1,
+        19
+      ],
+      "family": "设计方案"
+    },
+    {
+      "chars": 11166,
+      "sentences": 254,
+      "paragraphs": 1,
+      "avg_sentence_len": 67.4,
+      "avg_paragraph_len": 17474,
+      "headings_per_1k": 0.0,
+      "list_items": 22,
+      "list_ratio": 22.0,
+      "parallel_triples": 52,
+      "parallel_per_1k": 4.66,
+      "lexical": {
+        "管理黑话": 12,
+        "连接词": 2,
+        "对偶句式": 0,
+        "破折号": 36,
+        "形容词堆叠": 0
+      },
+      "lexical_per_1k": {
+        "管理黑话": 1.07,
+        "连接词": 0.18,
+        "对偶句式": 0.0,
+        "破折号": 3.22,
+        "形容词堆叠": 0.0
+      },
+      "certain_per_1k": 0.54,
+      "abstract_ratio": 0.224,
+      "path": "doc-1584ee23c4",
+      "name": "今天吃啥不麻烦设计方案_V1.20.docx",
+      "version": [
+        1,
+        20
+      ],
+      "family": "设计方案"
+    },
+    {
+      "chars": 8578,
+      "sentences": 192,
+      "paragraphs": 1,
+      "avg_sentence_len": 66.0,
+      "avg_paragraph_len": 12952,
+      "headings_per_1k": 0.0,
+      "list_items": 22,
+      "list_ratio": 22.0,
+      "parallel_triples": 47,
+      "parallel_per_1k": 5.48,
+      "lexical": {
+        "管理黑话": 11,
+        "连接词": 2,
+        "对偶句式": 0,
+        "破折号": 25,
+        "形容词堆叠": 0
+      },
+      "lexical_per_1k": {
+        "管理黑话": 1.28,
+        "连接词": 0.23,
+        "对偶句式": 0.0,
+        "破折号": 2.91,
+        "形容词堆叠": 0.0
+      },
+      "certain_per_1k": 0.47,
+      "abstract_ratio": 0.307,
+      "path": "doc-04fc92edcb",
+      "name": "今天吃啥不麻烦设计方案_V1.9.docx",
+      "version": [
+        1,
+        9
+      ],
+      "family": "设计方案"
+    },
+    {
+      "chars": 2116,
+      "sentences": 43,
+      "paragraphs": 1,
+      "avg_sentence_len": 114.5,
+      "avg_paragraph_len": 4989,
+      "headings_per_1k": 0.0,
+      "list_items": 14,
+      "list_ratio": 14.0,
+      "parallel_triples": 23,
+      "parallel_per_1k": 10.87,
+      "lexical": {
+        "管理黑话": 1,
+        "连接词": 0,
+        "对偶句式": 0,
+        "破折号": 0,
+        "形容词堆叠": 0
+      },
+      "lexical_per_1k": {
+        "管理黑话": 0.47,
+        "连接词": 0.0,
+        "对偶句式": 0.0,
+        "破折号": 0.0,
+        "形容词堆叠": 0.0
+      },
+      "certain_per_1k": 0.0,
+      "abstract_ratio": 0.093,
+      "path": "doc-3f122d1261",
+      "name": "今天吃啥呀施工手册_V1.0.docx",
+      "version": [
+        1,
+        0
+      ],
+      "family": "施工手册"
+    },
+    {
+      "chars": 7330,
+      "sentences": 152,
+      "paragraphs": 1,
+      "avg_sentence_len": 70.7,
+      "avg_paragraph_len": 10974,
+      "headings_per_1k": 0.0,
+      "list_items": 19,
+      "list_ratio": 19.0,
+      "parallel_triples": 45,
+      "parallel_per_1k": 6.14,
+      "lexical": {
+        "管理黑话": 9,
+        "连接词": 2,
+        "对偶句式": 0,
+        "破折号": 20,
+        "形容词堆叠": 0
+      },
+      "lexical_per_1k": {
+        "管理黑话": 1.23,
+        "连接词": 0.27,
+        "对偶句式": 0.0,
+        "破折号": 2.73,
+        "形容词堆叠": 0.0
+      },
+      "certain_per_1k": 0.41,
+      "abstract_ratio": 0.296,
+      "path": "doc-8436406932",
+      "name": "今天吃啥呀设计方案_V1.5.docx",
+      "version": [
+        1,
+        5
+      ],
+      "family": "设计方案"
+    },
+    {
+      "chars": 8076,
+      "sentences": 175,
+      "paragraphs": 1,
+      "avg_sentence_len": 68.3,
+      "avg_paragraph_len": 12209,
+      "headings_per_1k": 0.0,
+      "list_items": 22,
+      "list_ratio": 22.0,
+      "parallel_triples": 46,
+      "parallel_per_1k": 5.7,
+      "lexical": {
+        "管理黑话": 11,
+        "连接词": 2,
+        "对偶句式": 0,
+        "破折号": 21,
+        "形容词堆叠": 0
+      },
+      "lexical_per_1k": {
+        "管理黑话": 1.36,
+        "连接词": 0.25,
+        "对偶句式": 0.0,
+        "破折号": 2.6,
+        "形容词堆叠": 0.0
+      },
+      "certain_per_1k": 0.5,
+      "abstract_ratio": 0.303,
+      "path": "doc-c8b6410e6b",
+      "name": "今天吃啥呀设计方案_V1.6.docx",
+      "version": [
+        1,
+        6
+      ],
+      "family": "设计方案"
+    },
+    {
+      "chars": 8503,
+      "sentences": 189,
+      "paragraphs": 1,
+      "avg_sentence_len": 66.5,
+      "avg_paragraph_len": 12852,
+      "headings_per_1k": 0.0,
+      "list_items": 22,
+      "list_ratio": 22.0,
+      "parallel_triples": 47,
+      "parallel_per_1k": 5.53,
+      "lexical": {
+        "管理黑话": 11,
+        "连接词": 2,
+        "对偶句式": 0,
+        "破折号": 24,
+        "形容词堆叠": 0
+      },
+      "lexical_per_1k": {
+        "管理黑话": 1.29,
+        "连接词": 0.24,
+        "对偶句式": 0.0,
+        "破折号": 2.82,
+        "形容词堆叠": 0.0
+      },
+      "certain_per_1k": 0.47,
+      "abstract_ratio": 0.312,
+      "path": "doc-05f66322fe",
+      "name": "今天吃啥呀设计方案_V1.7.docx",
+      "version": [
+        1,
+        7
+      ],
+      "family": "设计方案"
+    },
+    {
+      "chars": 4636,
+      "sentences": 66,
+      "paragraphs": 1,
+      "avg_sentence_len": 105.3,
+      "avg_paragraph_len": 7056,
+      "headings_per_1k": 0.0,
+      "list_items": 10,
+      "list_ratio": 10.0,
+      "parallel_triples": 24,
+      "parallel_per_1k": 5.18,
+      "lexical": {
+        "管理黑话": 9,
+        "连接词": 1,
+        "对偶句式": 0,
+        "破折号": 10,
+        "形容词堆叠": 0
+      },
+      "lexical_per_1k": {
+        "管理黑话": 1.94,
+        "连接词": 0.22,
+        "对偶句式": 0.0,
+        "破折号": 2.16,
+        "形容词堆叠": 0.0
+      },
+      "certain_per_1k": 0.43,
+      "abstract_ratio": 0.197,
+      "path": "doc-5544df0b56",
+      "name": "今天这一顿设计方案_V1.0.docx",
+      "version": [
+        1,
+        0
+      ],
+      "family": "设计方案"
+    },
+    {
+      "chars": 6214,
+      "sentences": 121,
+      "paragraphs": 1,
+      "avg_sentence_len": 75.9,
+      "avg_paragraph_len": 9372,
+      "headings_per_1k": 0.0,
+      "list_items": 19,
+      "list_ratio": 19.0,
+      "parallel_triples": 36,
+      "parallel_per_1k": 5.79,
+      "lexical": {
+        "管理黑话": 10,
+        "连接词": 2,
+        "对偶句式": 0,
+        "破折号": 12,
+        "形容词堆叠": 0
+      },
+      "lexical_per_1k": {
+        "管理黑话": 1.61,
+        "连接词": 0.32,
+        "对偶句式": 0.0,
+        "破折号": 1.93,
+        "形容词堆叠": 0.0
+      },
+      "certain_per_1k": 0.32,
+      "abstract_ratio": 0.322,
+      "path": "doc-4b6d136f6b",
+      "name": "今天这一顿设计方案_V1.1.docx",
+      "version": [
+        1,
+        1
+      ],
+      "family": "设计方案"
+    },
+    {
+      "chars": 6444,
+      "sentences": 128,
+      "paragraphs": 1,
+      "avg_sentence_len": 74.0,
+      "avg_paragraph_len": 9669,
+      "headings_per_1k": 0.0,
+      "list_items": 19,
+      "list_ratio": 19.0,
+      "parallel_triples": 38,
+      "parallel_per_1k": 5.9,
+      "lexical": {
+        "管理黑话": 9,
+        "连接词": 2,
+        "对偶句式": 0,
+        "破折号": 14,
+        "形容词堆叠": 0
+      },
+      "lexical_per_1k": {
+        "管理黑话": 1.4,
+        "连接词": 0.31,
+        "对偶句式": 0.0,
+        "破折号": 2.17,
+        "形容词堆叠": 0.0
+      },
+      "certain_per_1k": 0.31,
+      "abstract_ratio": 0.312,
+      "path": "doc-0564029bea",
+      "name": "今天这一顿设计方案_V1.2.docx",
+      "version": [
+        1,
+        2
+      ],
+      "family": "设计方案"
+    },
+    {
+      "chars": 6651,
+      "sentences": 138,
+      "paragraphs": 1,
+      "avg_sentence_len": 70.8,
+      "avg_paragraph_len": 9989,
+      "headings_per_1k": 0.0,
+      "list_items": 19,
+      "list_ratio": 19.0,
+      "parallel_triples": 37,
+      "parallel_per_1k": 5.56,
+      "lexical": {
+        "管理黑话": 9,
+        "连接词": 2,
+        "对偶句式": 0,
+        "破折号": 15,
+        "形容词堆叠": 0
+      },
+      "lexical_per_1k": {
+        "管理黑话": 1.35,
+        "连接词": 0.3,
+        "对偶句式": 0.0,
+        "破折号": 2.26,
+        "形容词堆叠": 0.0
+      },
+      "certain_per_1k": 0.3,
+      "abstract_ratio": 0.304,
+      "path": "doc-ba1de3d42e",
+      "name": "今天这一顿设计方案_V1.3.docx",
+      "version": [
+        1,
+        3
+      ],
+      "family": "设计方案"
+    },
+    {
+      "chars": 7250,
+      "sentences": 150,
+      "paragraphs": 1,
+      "avg_sentence_len": 71.0,
+      "avg_paragraph_len": 10872,
+      "headings_per_1k": 0.0,
+      "list_items": 19,
+      "list_ratio": 19.0,
+      "parallel_triples": 44,
+      "parallel_per_1k": 6.07,
+      "lexical": {
+        "管理黑话": 9,
+        "连接词": 2,
+        "对偶句式": 0,
+        "破折号": 19,
+        "形容词堆叠": 0
+      },
+      "lexical_per_1k": {
+        "管理黑话": 1.24,
+        "连接词": 0.28,
+        "对偶句式": 0.0,
+        "破折号": 2.62,
+        "形容词堆叠": 0.0
+      },
+      "certain_per_1k": 0.41,
+      "abstract_ratio": 0.3,
+      "path": "doc-1e395d2d64",
+      "name": "今天这一顿设计方案_V1.4.docx",
+      "version": [
+        1,
+        4
+      ],
+      "family": "设计方案"
+    },
+    {
+      "chars": 2162,
+      "sentences": 43,
+      "paragraphs": 1,
+      "avg_sentence_len": 115.8,
+      "avg_paragraph_len": 5045,
+      "headings_per_1k": 0.0,
+      "list_items": 14,
+      "list_ratio": 14.0,
+      "parallel_triples": 23,
+      "parallel_per_1k": 10.64,
+      "lexical": {
+        "管理黑话": 1,
+        "连接词": 0,
+        "对偶句式": 0,
+        "破折号": 1,
+        "形容词堆叠": 0
+      },
+      "lexical_per_1k": {
+        "管理黑话": 0.46,
+        "连接词": 0.0,
+        "对偶句式": 0.0,
+        "破折号": 0.46,
+        "形容词堆叠": 0.0
+      },
+      "certain_per_1k": 0.0,
+      "abstract_ratio": 0.093,
+      "path": "doc-c1adfc1257",
+      "name": "吃啥不麻烦施工手册_V1.1.docx",
+      "version": [
+        1,
+        1
+      ],
+      "family": "施工手册"
+    },
+    {
+      "chars": 2338,
+      "sentences": 52,
+      "paragraphs": 1,
+      "avg_sentence_len": 101.3,
+      "avg_paragraph_len": 5346,
+      "headings_per_1k": 0.0,
+      "list_items": 14,
+      "list_ratio": 14.0,
+      "parallel_triples": 25,
+      "parallel_per_1k": 10.69,
+      "lexical": {
+        "管理黑话": 1,
+        "连接词": 0,
+        "对偶句式": 0,
+        "破折号": 1,
+        "形容词堆叠": 0
+      },
+      "lexical_per_1k": {
+        "管理黑话": 0.43,
+        "连接词": 0.0,
+        "对偶句式": 0.0,
+        "破折号": 0.43,
+        "形容词堆叠": 0.0
+      },
+      "certain_per_1k": 0.0,
+      "abstract_ratio": 0.096,
+      "path": "doc-4641cf9e44",
+      "name": "吃啥不麻烦施工手册_V1.2.docx",
+      "version": [
+        1,
+        2
+      ],
+      "family": "施工手册"
+    },
+    {
+      "chars": 8572,
+      "sentences": 192,
+      "paragraphs": 1,
+      "avg_sentence_len": 65.9,
+      "avg_paragraph_len": 12946,
+      "headings_per_1k": 0.0,
+      "list_items": 22,
+      "list_ratio": 22.0,
+      "parallel_triples": 47,
+      "parallel_per_1k": 5.48,
+      "lexical": {
+        "管理黑话": 11,
+        "连接词": 2,
+        "对偶句式": 0,
+        "破折号": 25,
+        "形容词堆叠": 0
+      },
+      "lexical_per_1k": {
+        "管理黑话": 1.28,
+        "连接词": 0.23,
+        "对偶句式": 0.0,
+        "破折号": 2.92,
+        "形容词堆叠": 0.0
+      },
+      "certain_per_1k": 0.47,
+      "abstract_ratio": 0.307,
+      "path": "doc-f74e0cb9ff",
+      "name": "吃啥不麻烦设计方案_V1.8.docx",
+      "version": [
+        1,
+        8
+      ],
+      "family": "设计方案"
+    }
+  ],
+  "chains": [
+    {
+      "family": "施工手册",
+      "versions": [
+        "今天吃啥呀施工手册_V1.0.docx",
+        "吃啥不麻烦施工手册_V1.1.docx",
+        "吃啥不麻烦施工手册_V1.2.docx",
+        "今天吃啥不麻烦施工手册_V1.3.docx",
+        "今天吃啥不麻烦施工手册_V1.4.docx",
+        "今天吃啥不麻烦施工手册_V1.5.docx",
+        "今天吃啥不麻烦施工手册_V1.6.docx",
+        "今天吃啥不麻烦施工手册_V1.7.docx",
+        "今天吃啥不麻烦施工手册_V1.8.docx",
+        "今天吃啥不麻烦施工手册_V1.9.docx",
+        "今天吃啥不麻烦施工手册_V1.10.docx"
+      ],
+      "steps": [
+        {
+          "from": "今天吃啥呀施工手册_V1.0.docx",
+          "to": "吃啥不麻烦施工手册_V1.1.docx",
+          "chars_from": 2116,
+          "chars_to": 2162,
+          "delta_chars": 46,
+          "similarity": 0.992,
+          "rewrite_share": 0.008
+        },
+        {
+          "from": "吃啥不麻烦施工手册_V1.1.docx",
+          "to": "吃啥不麻烦施工手册_V1.2.docx",
+          "chars_from": 2162,
+          "chars_to": 2338,
+          "delta_chars": 176,
+          "similarity": 0.967,
+          "rewrite_share": 0.033
+        },
+        {
+          "from": "吃啥不麻烦施工手册_V1.2.docx",
+          "to": "今天吃啥不麻烦施工手册_V1.3.docx",
+          "chars_from": 2338,
+          "chars_to": 2368,
+          "delta_chars": 30,
+          "similarity": 0.995,
+          "rewrite_share": 0.005
+        },
+        {
+          "from": "今天吃啥不麻烦施工手册_V1.3.docx",
+          "to": "今天吃啥不麻烦施工手册_V1.4.docx",
+          "chars_from": 2368,
+          "chars_to": 2361,
+          "delta_chars": -7,
+          "similarity": 0.948,
+          "rewrite_share": 0.052
+        },
+        {
+          "from": "今天吃啥不麻烦施工手册_V1.4.docx",
+          "to": "今天吃啥不麻烦施工手册_V1.5.docx",
+          "chars_from": 2361,
+          "chars_to": 2638,
+          "delta_chars": 277,
+          "similarity": 0.888,
+          "rewrite_share": 0.112
+        },
+        {
+          "from": "今天吃啥不麻烦施工手册_V1.5.docx",
+          "to": "今天吃啥不麻烦施工手册_V1.6.docx",
+          "chars_from": 2638,
+          "chars_to": 3333,
+          "delta_chars": 695,
+          "similarity": 0.819,
+          "rewrite_share": 0.181
+        },
+        {
+          "from": "今天吃啥不麻烦施工手册_V1.6.docx",
+          "to": "今天吃啥不麻烦施工手册_V1.7.docx",
+          "chars_from": 3333,
+          "chars_to": 3668,
+          "delta_chars": 335,
+          "similarity": 0.94,
+          "rewrite_share": 0.06
+        },
+        {
+          "from": "今天吃啥不麻烦施工手册_V1.7.docx",
+          "to": "今天吃啥不麻烦施工手册_V1.8.docx",
+          "chars_from": 3668,
+          "chars_to": 3732,
+          "delta_chars": 64,
+          "similarity": 0.979,
+          "rewrite_share": 0.021
+        },
+        {
+          "from": "今天吃啥不麻烦施工手册_V1.8.docx",
+          "to": "今天吃啥不麻烦施工手册_V1.9.docx",
+          "chars_from": 3732,
+          "chars_to": 3815,
+          "delta_chars": 83,
+          "similarity": 0.99,
+          "rewrite_share": 0.01
+        },
+        {
+          "from": "今天吃啥不麻烦施工手册_V1.9.docx",
+          "to": "今天吃啥不麻烦施工手册_V1.10.docx",
+          "chars_from": 3815,
+          "chars_to": 3840,
+          "delta_chars": 25,
+          "similarity": 0.982,
+          "rewrite_share": 0.018
+        }
+      ]
+    },
+    {
+      "family": "设计方案",
+      "versions": [
+        "今天这一顿设计方案_V1.0.docx",
+        "今天这一顿设计方案_V1.1.docx",
+        "今天这一顿设计方案_V1.2.docx",
+        "今天这一顿设计方案_V1.3.docx",
+        "今天这一顿设计方案_V1.4.docx",
+        "今天吃啥呀设计方案_V1.5.docx",
+        "今天吃啥呀设计方案_V1.6.docx",
+        "今天吃啥呀设计方案_V1.7.docx",
+        "吃啥不麻烦设计方案_V1.8.docx",
+        "今天吃啥不麻烦设计方案_V1.9.docx",
+        "今天吃啥不麻烦设计方案_V1.10.docx",
+        "今天吃啥不麻烦设计方案_V1.11.docx",
+        "今天吃啥不麻烦设计方案_V1.12.docx",
+        "今天吃啥不麻烦设计方案_V1.13.docx",
+        "今天吃啥不麻烦设计方案_V1.14.docx",
+        "今天吃啥不麻烦设计方案_V1.15.docx",
+        "今天吃啥不麻烦设计方案_V1.16.docx",
+        "今天吃啥不麻烦设计方案_V1.17.docx",
+        "今天吃啥不麻烦设计方案_V1.18.docx",
+        "今天吃啥不麻烦设计方案_V1.19.docx",
+        "今天吃啥不麻烦设计方案_V1.20.docx"
+      ],
+      "steps": [
+        {
+          "from": "今天这一顿设计方案_V1.0.docx",
+          "to": "今天这一顿设计方案_V1.1.docx",
+          "chars_from": 4636,
+          "chars_to": 6214,
+          "delta_chars": 1578,
+          "similarity": 0.847,
+          "rewrite_share": 0.153
+        },
+        {
+          "from": "今天这一顿设计方案_V1.1.docx",
+          "to": "今天这一顿设计方案_V1.2.docx",
+          "chars_from": 6214,
+          "chars_to": 6444,
+          "delta_chars": 230,
+          "similarity": 0.976,
+          "rewrite_share": 0.024
+        },
+        {
+          "from": "今天这一顿设计方案_V1.2.docx",
+          "to": "今天这一顿设计方案_V1.3.docx",
+          "chars_from": 6444,
+          "chars_to": 6651,
+          "delta_chars": 207,
+          "similarity": 0.979,
+          "rewrite_share": 0.021
+        },
+        {
+          "from": "今天这一顿设计方案_V1.3.docx",
+          "to": "今天这一顿设计方案_V1.4.docx",
+          "chars_from": 6651,
+          "chars_to": 7250,
+          "delta_chars": 599,
+          "similarity": 0.957,
+          "rewrite_share": 0.043
+        },
+        {
+          "from": "今天这一顿设计方案_V1.4.docx",
+          "to": "今天吃啥呀设计方案_V1.5.docx",
+          "chars_from": 7250,
+          "chars_to": 7330,
+          "delta_chars": 80,
+          "similarity": 0.995,
+          "rewrite_share": 0.005
+        },
+        {
+          "from": "今天吃啥呀设计方案_V1.5.docx",
+          "to": "今天吃啥呀设计方案_V1.6.docx",
+          "chars_from": 7330,
+          "chars_to": 8076,
+          "delta_chars": 746,
+          "similarity": 0.938,
+          "rewrite_share": 0.062
+        },
+        {
+          "from": "今天吃啥呀设计方案_V1.6.docx",
+          "to": "今天吃啥呀设计方案_V1.7.docx",
+          "chars_from": 8076,
+          "chars_to": 8503,
+          "delta_chars": 427,
+          "similarity": 0.955,
+          "rewrite_share": 0.045
+        },
+        {
+          "from": "今天吃啥呀设计方案_V1.7.docx",
+          "to": "吃啥不麻烦设计方案_V1.8.docx",
+          "chars_from": 8503,
+          "chars_to": 8572,
+          "delta_chars": 69,
+          "similarity": 0.996,
+          "rewrite_share": 0.004
+        },
+        {
+          "from": "吃啥不麻烦设计方案_V1.8.docx",
+          "to": "今天吃啥不麻烦设计方案_V1.9.docx",
+          "chars_from": 8572,
+          "chars_to": 8578,
+          "delta_chars": 6,
+          "similarity": 1.0,
+          "rewrite_share": 0.0
+        },
+        {
+          "from": "今天吃啥不麻烦设计方案_V1.9.docx",
+          "to": "今天吃啥不麻烦设计方案_V1.10.docx",
+          "chars_from": 8578,
+          "chars_to": 9225,
+          "delta_chars": 647,
+          "similarity": 0.958,
+          "rewrite_share": 0.042
+        },
+        {
+          "from": "今天吃啥不麻烦设计方案_V1.10.docx",
+          "to": "今天吃啥不麻烦设计方案_V1.11.docx",
+          "chars_from": 9225,
+          "chars_to": 9404,
+          "delta_chars": 179,
+          "similarity": 0.989,
+          "rewrite_share": 0.011
+        },
+        {
+          "from": "今天吃啥不麻烦设计方案_V1.11.docx",
+          "to": "今天吃啥不麻烦设计方案_V1.12.docx",
+          "chars_from": 9404,
+          "chars_to": 9680,
+          "delta_chars": 276,
+          "similarity": 0.981,
+          "rewrite_share": 0.019
+        },
+        {
+          "from": "今天吃啥不麻烦设计方案_V1.12.docx",
+          "to": "今天吃啥不麻烦设计方案_V1.13.docx",
+          "chars_from": 9680,
+          "chars_to": 9974,
+          "delta_chars": 294,
+          "similarity": 0.976,
+          "rewrite_share": 0.024
+        },
+        {
+          "from": "今天吃啥不麻烦设计方案_V1.13.docx",
+          "to": "今天吃啥不麻烦设计方案_V1.14.docx",
+          "chars_from": 9974,
+          "chars_to": 10079,
+          "delta_chars": 105,
+          "similarity": 0.994,
+          "rewrite_share": 0.006
+        },
+        {
+          "from": "今天吃啥不麻烦设计方案_V1.14.docx",
+          "to": "今天吃啥不麻烦设计方案_V1.15.docx",
+          "chars_from": 10079,
+          "chars_to": 10190,
+          "delta_chars": 111,
+          "similarity": 0.975,
+          "rewrite_share": 0.025
+        },
+        {
+          "from": "今天吃啥不麻烦设计方案_V1.15.docx",
+          "to": "今天吃啥不麻烦设计方案_V1.16.docx",
+          "chars_from": 10190,
+          "chars_to": 10391,
+          "delta_chars": 201,
+          "similarity": 0.98,
+          "rewrite_share": 0.02
+        },
+        {
+          "from": "今天吃啥不麻烦设计方案_V1.16.docx",
+          "to": "今天吃啥不麻烦设计方案_V1.17.docx",
+          "chars_from": 10391,
+          "chars_to": 10540,
+          "delta_chars": 149,
+          "similarity": 0.992,
+          "rewrite_share": 0.008
+        },
+        {
+          "from": "今天吃啥不麻烦设计方案_V1.17.docx",
+          "to": "今天吃啥不麻烦设计方案_V1.18.docx",
+          "chars_from": 10540,
+          "chars_to": 10695,
+          "delta_chars": 155,
+          "similarity": 0.991,
+          "rewrite_share": 0.009
+        },
+        {
+          "from": "今天吃啥不麻烦设计方案_V1.18.docx",
+          "to": "今天吃啥不麻烦设计方案_V1.19.docx",
+          "chars_from": 10695,
+          "chars_to": 11111,
+          "delta_chars": 416,
+          "similarity": 0.976,
+          "rewrite_share": 0.024
+        },
+        {
+          "from": "今天吃啥不麻烦设计方案_V1.19.docx",
+          "to": "今天吃啥不麻烦设计方案_V1.20.docx",
+          "chars_from": 11111,
+          "chars_to": 11174,
+          "delta_chars": 63,
+          "similarity": 0.997,
+          "rewrite_share": 0.003
+        }
+      ]
+    }
+  ]
+}
