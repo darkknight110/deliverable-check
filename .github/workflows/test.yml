@@ -41,6 +41,16 @@ jobs:
           print("演示素材 OK：", im.size, im.n_frames, "帧")
           PY
 
+      - name: 演示素材新鲜度（首屏图与动图都在，且不是占位文件）
+        if: matrix.python == '3.11'
+        run: |
+          python - <<'PY'
+          import os
+          for p, low in (("docs/demo-preflight.gif", 100_000), ("docs/demo-preflight-story.png", 50_000)):
+              assert os.path.getsize(p) > low, f"{p} 太小，可能是占位/过期素材"
+          print("演示素材 OK")
+          PY
+
       - name: 脏表必须阻断（负向对照）
         run: |
           python tools/make_dirty_fixture.py --out /tmp/dirty.xlsx
