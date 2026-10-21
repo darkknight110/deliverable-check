@@ -1,7 +1,7 @@
 # 把数据体检接进 devflow 门禁
 
-这个目录是可运行的示例：一个 `data` 门禁，**干净表通过、脏表阻断**，而且阻断时记录里有
-`exit≠0` + `FAIL data-audit blocked` 两条证据。
+这个目录是可运行的示例：一个 `data` 门禁 + 一条**发布前置要求**——
+干净表通过、脏表阻断，而且**数据没修好时 `released` 也发不出去**。
 
 ```bash
 # 需要 devflow-kit；DEVFLOW 指向它的 bin/devflow
@@ -19,7 +19,9 @@ DEVFLOW=../devflow-kit/bin/devflow bash examples/devflow-gate/verify.sh
 exit=1 command=./scripts/data-gate.sh
 tail=FAIL data-audit blocked: 4 blocking findings
   [OK] 阻断，且记录里有 exit≠0 + FAIL 证据
-通过 5 项，失败 0 项
+== 5. 发布前置：数据没修好，不许 released
+  [OK] released 被拦住（release.requires=data 生效）
+通过 6 项，失败 0 项
 ```
 
 ## 怎么接到你自己的项目
@@ -32,6 +34,7 @@ tail=FAIL data-audit blocked: 4 blocking findings
 
 ```json
 {
+  "release": { "requires": ["data"] },
   "gates": {
     "data": {
       "run": "./scripts/data-gate.sh",
@@ -41,6 +44,9 @@ tail=FAIL data-audit blocked: 4 blocking findings
 }
 ```
 
+`release.requires` 那一行是关键：它把"记得体检"变成"不体检就发不出去"。
+`advance --to released` 会先现跑一遍门禁；失败、未验证、豁免都不算通过。
+
 4. `devflow doctor` → 结论必须是「门禁可用」；`devflow gate run <变更>` → 干净表 PASS、脏表 BLOCKED。
 
 ## 三个容易踩的坑
@@ -49,7 +55,8 @@ tail=FAIL data-audit blocked: 4 blocking findings
 |---|---|---|
 | 负向对照写成"一定失败的命令"（如 `false`） | doctor 报「输出中无 FAIL/AssertionError/失败计数」 | 哨兵必须是**真实的脏数据**，让工具自己报出 `FAIL` |
 | 只判退出码，不要求失败证据 | 门禁看似生效，其实可能因"文件不存在"而退出 1 | `audit_data.py` 在阻断时会打印 `FAIL data-audit blocked: N ...` |
-| 把汇总表当明细表体检 | 真实损益表被误判"不可交付" | 汇总表会被降级为提示；比率列自动跳过 |
+| 把汇总表当明细表体检 | 真实损益表被误判「不可交付」 | 汇总表会被降级为提示；比率列自动跳过 |
+| 只在 `tested` 跑门禁，不挂 `release.requires` | 发布时拿几天前的绿灯当证据 | 加 `release.requires`，发布前强制现跑 |
 
 > 为什么不用 `count_regex`：数据体检没有"测试数"，只认退出码 + 失败证据。
 > 这是 devflow 允许的形态（`G2` 只要求命令原文/退出码/输出尾部），但**负向对照不能省**。

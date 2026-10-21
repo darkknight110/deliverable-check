@@ -1,10 +1,20 @@
 {
-  "devflow": { "kit": "^1.0", "project": "data-delivery", "kind": "service", "stack": "python" },
+  "devflow": {
+    "kit": "^1.0",
+    "project": "data-delivery",
+    "kind": "service",
+    "stack": "python"
+  },
   "profile": "solo",
   "gates": {
     "data": {
       "run": "./scripts/data-gate.sh",
       "negative_control": "./scripts/data-should-fail.sh"
     }
+  },
+  "release": {
+    "requires": [
+      "data"
+    ]
   }
 }

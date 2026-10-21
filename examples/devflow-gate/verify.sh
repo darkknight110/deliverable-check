@@ -72,6 +72,15 @@ else
   fi
 fi
 
+echo "== 5. 发布前置：数据没修好，不许 released"
+"$DEVFLOW" new --slug release-check --tier micro --title "发布数据" >/dev/null 2>&1
+ITEM2="$(ls -1t .devflow/.local/items 2>/dev/null | head -1)"
+if "$DEVFLOW" advance "$ITEM2" --to released >/tmp/dg-release.log 2>&1; then
+  bad "脏数据竟然发布成功 —— release.requires 没生效"
+else
+  grep -qE "拒绝推进|data" /tmp/dg-release.log && ok "released 被拦住（release.requires=data 生效）" || bad "拦住了但原因不明"
+fi
+
 echo
 echo "通过 $pass 项，失败 $fail 项"
 [ "$fail" -eq 0 ] && echo "数据门禁接入验收通过" || echo "数据门禁接入验收失败"

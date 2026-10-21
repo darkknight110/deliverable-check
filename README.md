@@ -36,8 +36,9 @@ python3 tools/audit_data.py 交付表.xlsx --key-col 订单号
 
 零第三方依赖？不完全是：`audit_data` 需要 `openpyxl`，其余两个只用标准库。
 
-**已经接到流程里**：`audit_data.py` 可作为 devflow 门禁运行，脏数据会阻断交付。
-验收脚本：[`examples/devflow-gate/verify.sh`](examples/devflow-gate/verify.sh)（5/5 通过）。
+**已经接到流程里**：`audit_data.py` 可作为 devflow 门禁运行；声明 `release.requires` 后，
+**数据没修好就发不出去**（released 前置阻断）。
+验收脚本：[`examples/devflow-gate/verify.sh`](examples/devflow-gate/verify.sh)（6/6 通过）。
 
 ---
 
