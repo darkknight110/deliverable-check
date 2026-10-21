@@ -202,6 +202,8 @@ def render(report) -> str:
 
 
 def main() -> int:
+    from . import utf8_stdio
+    utf8_stdio()
     argv = sys.argv[1:]
     lang = "en" if "--lang" in argv and argv[argv.index("--lang") + 1:argv.index("--lang") + 2] == ["en"] else "zh"
 

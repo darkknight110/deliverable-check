@@ -418,6 +418,8 @@ def _audit_rows(path, rows, sheet_title, merges, key_col):
 
 
 def main() -> int:
+    from . import utf8_stdio
+    utf8_stdio()
     ap = argparse.ArgumentParser(description="Excel 数据交付体检")
     ap.add_argument("file", help=".xlsx 文件")
     ap.add_argument("--sheet", help="工作表名（默认第一张）")

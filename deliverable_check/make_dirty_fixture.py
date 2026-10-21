@@ -63,6 +63,8 @@ def build(path: str) -> str:
 
 
 def main() -> int:
+    from . import utf8_stdio
+    utf8_stdio()
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", default="/tmp/dirty-orders.xlsx")
     args = ap.parse_args()
