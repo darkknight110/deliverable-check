@@ -108,8 +108,14 @@ def rework(paths):
 
 
 def run(inputs):
-    groups = classify(collect(inputs))
-    report = {"data": [], "docs": None, "rework": None, "verdict": "clean"}
+    paths = collect(inputs)
+    groups = classify(paths)
+    report = {"data": [], "docs": None, "rework": None, "verdict": "clean", "empty": False}
+    if not paths:
+        # 空目录不能算"可交付"：门禁指向错路径时，最容易发生的假通过就是"什么都没检查"。
+        report["empty"] = True
+        report["verdict"] = "blocked"
+        return report
 
     for p in groups["xlsx"]:
         try:
@@ -133,6 +139,8 @@ def run(inputs):
 
 def render(report) -> str:
     lines = ["交付前体检"]
+    if report.get("empty"):
+        lines.append("  ⛔ 没有找到可体检的文件（.xlsx / .md / .docx）——检查路径是否指错")
     if report["data"]:
         lines.append("· 数据：")
         for d in report["data"]:
@@ -172,6 +180,13 @@ def main() -> int:
         print(json.dumps(report, ensure_ascii=False, indent=2))
     else:
         print(render(report))
+    if report["verdict"] == "blocked":
+        # 机器可读的失败证据：门禁不能只看退出码（"文件不存在"也可能返回 1）
+        blocks = sum(len(d["blocking"]) for d in report["data"])
+        if report.get("empty"):
+            print("FAIL preflight blocked: no files found")
+        else:
+            print(f"FAIL preflight blocked: {blocks} blocking findings")
     return 1 if report["verdict"] == "blocked" else 0
 
 

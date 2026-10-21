@@ -24,7 +24,21 @@ tail=FAIL data-audit blocked: 4 blocking findings
 通过 6 项，失败 0 项
 ```
 
-## 怎么接到你自己的项目
+## 最省事的接法
+
+```bash
+devflow init --with-preflight   # devflow-kit ≥ 1.28.0
+```
+
+生成的两个脚本与这里完全同构（负向对照同样现场造脏表），不用手抄。
+验收这个"一条命令"路径：
+
+```bash
+DEVFLOW=../devflow-kit/bin/devflow PREFLIGHT_HOME=.. bash examples/devflow-gate/verify-init.sh
+# 通过 7 项：登记、脚本可执行、负向对照失败、空目录拦、脏数据拦发布、干净数据放行
+```
+
+## 手动接法（想自己控制细节时）
 
 1. 把 `tools/audit_data.py` 复制到项目的 `scripts/audit_data.py`（**单文件、无私有依赖**，只需 `openpyxl`）。
 2. 复制两个包装脚本，改掉里面的文件名：

@@ -38,7 +38,22 @@ python3 tools/audit_data.py 交付表.xlsx --key-col 订单号
 
 **已经接到流程里**：`audit_data.py` 可作为 devflow 门禁运行；声明 `release.requires` 后，
 **数据没修好就发不出去**（released 前置阻断）。
-验收脚本：[`examples/devflow-gate/verify.sh`](examples/devflow-gate/verify.sh)（6/6 通过）。
+
+新项目一条命令接好（devflow-kit ≥ 1.28.0）：
+
+```bash
+devflow init --with-preflight
+```
+
+它生成两个包装脚本、登记 `preflight` 门禁、加进 `release.requires`；负向对照会**现场造一张脏表**，
+证明这道门禁不是恒真。
+
+验收（两个脚本都是可复跑的）：
+
+```bash
+DEVFLOW=../devflow-kit/bin/devflow PREFLIGHT_HOME=.. bash examples/devflow-gate/verify-init.sh   # 一条命令接入：7/7
+DEVFLOW=../devflow-kit/bin/devflow bash examples/devflow-gate/verify.sh                         # 手动接线：6/6
+```
 
 ---
 
