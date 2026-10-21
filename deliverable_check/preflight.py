@@ -29,7 +29,10 @@ from . import measure_ai_flavor as af
 from . import measure_proposals as mp
 
 
-def collect(inputs):
+def collect(inputs, excludes=(), max_files=2000):
+    """收集文件。excludes 是 glob；超过 max_files 时截断并提示（不静默扫全盘）。"""
+    import fnmatch
+
     paths = []
     for item in inputs:
         if os.path.isdir(item):
@@ -39,7 +42,12 @@ def collect(inputs):
                         paths.append(os.path.join(root, f))
         elif os.path.isfile(item):
             paths.append(item)
-    return sorted(set(paths))
+    out = [p for p in sorted(set(paths)) if not any(fnmatch.fnmatch(p, pat) for pat in excludes)]
+    if len(out) > max_files:
+        print(f"⚠ 文件数 {len(out)} 超过上限 {max_files}，只体检前 {max_files} 个（用 --max-files 调整）",
+              file=sys.stderr)
+        out = out[:max_files]
+    return out
 
 
 def classify(paths):
@@ -104,8 +112,8 @@ def rework(paths):
     return out
 
 
-def run(inputs):
-    paths = collect(inputs)
+def run(inputs, excludes=(), max_files=2000):
+    paths = collect(inputs, excludes, max_files)
     groups = classify(paths)
     report = {"data": [], "docs": None, "rework": None, "verdict": "clean", "empty": False}
     if not paths:
@@ -170,9 +178,13 @@ def main() -> int:
     ap = argparse.ArgumentParser(description="交付前体检：一个入口，按类型分派")
     ap.add_argument("inputs", nargs="+", help="文件或目录")
     ap.add_argument("--json", action="store_true")
+    ap.add_argument("--exclude", action="append", default=[], help="排除的 glob，可重复（如 '*草稿*'）")
+    ap.add_argument("--max-files", type=int, default=2000, help="最多体检多少个文件（默认 2000）")
+    from . import __version__
+    ap.add_argument("--version", action="version", version=f"deliverable-check {__version__}")
     args = ap.parse_args()
 
-    report = run(args.inputs)
+    report = run(args.inputs, args.exclude, args.max_files)
     if args.json:
         print(json.dumps(report, ensure_ascii=False, indent=2))
     else:

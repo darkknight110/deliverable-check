@@ -78,7 +78,10 @@ FAIL preflight blocked: 4 blocking findings
 ```bash
 # 4) 换成你自己的交付物（文件或目录都行）
 preflight 交付/                       # 按扩展名分派：.xlsx → 数据；.md/.docx → 方案
+preflight 交付/ --exclude '*草稿*'      # 排除临时文件（glob 可重复）
+preflight 交付/ --max-files 500         # 大目录限流，超出会提示（不静默扫全盘）
 audit-data 明细.xlsx --key-col 订单号  # 单表深检，--json 可接 CI
+preflight --version                    # 版本（报 bug 时先看这个）
 ```
 
 **期望**：没有阻断时退出码 0；有阻断时 1。**退出码就是给门禁/CI 用的接口**，不需要解析文字。

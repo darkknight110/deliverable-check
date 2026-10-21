@@ -315,6 +315,8 @@ def main() -> int:
     ap.add_argument("--sheet", help="工作表名（默认第一张）")
     ap.add_argument("--key-col", help="主键列名（默认第一列）")
     ap.add_argument("--json", action="store_true", help="输出 JSON")
+    from . import __version__
+    ap.add_argument("--version", action="version", version=f"deliverable-check {__version__}")
     args = ap.parse_args()
 
     report = audit(args.file, args.sheet, args.key_col)
