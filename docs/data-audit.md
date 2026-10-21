@@ -82,22 +82,28 @@ python3 tools/audit_data.py 交付表.xlsx --json
 # 退出码：0 可交付；1 有阻断
 ```
 
-接进 devflow 的门禁声明（`devflow.json`）：
+接进 devflow 门禁（**已验收**，示例在 [`examples/devflow-gate/`](../examples/devflow-gate/)）：
+
+```bash
+DEVFLOW=../devflow-kit/bin/devflow bash examples/devflow-gate/verify.sh
+# 通过 5 项，失败 0 项 —— 干净表 PASS、脏表 BLOCKED（记录里带 exit=1 + FAIL 证据）
+```
+
+`devflow.json` 里只要两条：
 
 ```json
 {
   "gates": {
     "data": {
-      "run": "python3 tools/audit_data.py 交付/明细.xlsx",
-      "negative_control": "python3 tools/audit_data.py 交付/坏样本.xlsx",
-      "count_regex": "",
-      "require_min_tests": 0
+      "run": "./scripts/data-gate.sh",
+      "negative_control": "./scripts/data-should-fail.sh"
     }
   }
 }
 ```
 
-> 注意：`count_regex` 留空时，devflow 只校验退出码，不校验测试计数——对数据体检这是合理的；但**必须有负向对照**（用脏表当哨兵），否则门禁恒真。
+> 关键在**负向对照**：拿脏表当哨兵。没有它，门禁可能因为"文件不存在"而退出 1，看起来生效其实空转。
+> 细节与三个坑见 [`examples/devflow-gate/README.md`](../examples/devflow-gate/README.md)。
 
 ---
 

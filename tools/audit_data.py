@@ -331,6 +331,9 @@ def main() -> int:
         if not report["findings"]:
             print("  ✓ 未发现可机械检出的问题")
         print(f"  结论：{ {'clean': '可交付', 'warn': '有风险项，需确认', 'blocked': '不可交付'}[report['verdict']] }")
+        if report["verdict"] == "blocked":
+            # 机器可读的失败证据：门禁只认"输出里有明确的失败标记"，不能只靠退出码
+            print(f"FAIL data-audit blocked: {report['summary']['block']} blocking findings")
     return 1 if report["verdict"] == "blocked" else 0
 
 
