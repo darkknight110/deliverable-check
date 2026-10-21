@@ -20,10 +20,10 @@ import tempfile
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(os.path.dirname(HERE))
-sys.path.insert(0, os.path.join(ROOT, "tools"))
+sys.path.insert(0, ROOT)
 
-import audit_data  # noqa: E402
-import make_dirty_fixture  # noqa: E402
+from deliverable_check import audit_data  # noqa: E402
+from deliverable_check import make_dirty_fixture  # noqa: E402
 
 
 def run(cmd: str, cwd: str) -> tuple[str, int]:
