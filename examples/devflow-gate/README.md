@@ -57,6 +57,7 @@ tail=FAIL data-audit blocked: 4 blocking findings
 | 只判退出码，不要求失败证据 | 门禁看似生效，其实可能因"文件不存在"而退出 1 | `audit_data.py` 在阻断时会打印 `FAIL data-audit blocked: N ...` |
 | 把汇总表当明细表体检 | 真实损益表被误判「不可交付」 | 汇总表会被降级为提示；比率列自动跳过 |
 | 只在 `tested` 跑门禁，不挂 `release.requires` | 发布时拿几天前的绿灯当证据 | 加 `release.requires`，发布前强制现跑 |
+| 用 `--no-run` 跳过发布前的门禁 | 旧记录被当成新证据 | G9 会查记录时间：早于最近一次产物修改即判旧证据 |
 
 > 为什么不用 `count_regex`：数据体检没有"测试数"，只认退出码 + 失败证据。
 > 这是 devflow 允许的形态（`G2` 只要求命令原文/退出码/输出尾部），但**负向对照不能省**。
