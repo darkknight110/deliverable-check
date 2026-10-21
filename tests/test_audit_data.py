@@ -7,10 +7,10 @@ import tempfile
 import unittest
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, os.path.join(os.path.dirname(HERE), "tools"))
+sys.path.insert(0, os.path.dirname(HERE))
 
-import audit_data  # noqa: E402
-import make_dirty_fixture  # noqa: E402
+from deliverable_check import audit_data  # noqa: E402
+from deliverable_check import make_dirty_fixture  # noqa: E402
 
 
 class TestDirtyWorkbook(unittest.TestCase):

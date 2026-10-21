@@ -6,10 +6,10 @@ import sys
 import unittest
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, os.path.join(os.path.dirname(HERE), "tools"))
+sys.path.insert(0, os.path.dirname(HERE))
 
-import measure_proposals as mp  # noqa: E402
-from _text import normalize_heading, strip_markup  # noqa: E402
+from deliverable_check import measure_proposals as mp  # noqa: E402
+from deliverable_check._text import normalize_heading, strip_markup  # noqa: E402
 
 SAMPLE = """# 某项目方案
 

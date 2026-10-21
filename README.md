@@ -26,6 +26,23 @@ python3 tools/preflight.py 交付目录/ 方案.md
 
 ---
 
+## 一行装好
+
+```bash
+pipx install git+https://github.com/darkknight110/deliverable-check.git
+# 或者：uv tool install git+https://github.com/darkknight110/deliverable-check.git
+# PyPI 首发后即可：pipx install deliverable-check
+```
+
+装完直接跑（不需要 `python` 前缀）：
+
+```bash
+preflight 交付/                     # 一个入口，按文件类型分派
+audit-data 明细.xlsx --key-col 订单号
+```
+
+> 演示（GIF/故事板）另需 Pillow：`pip install "deliverable-check[demo] @ git+https://github.com/darkknight110/deliverable-check.git"`。
+
 ## 快速开始
 
 ```bash

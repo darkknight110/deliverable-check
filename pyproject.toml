@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "deliverable-check"
+version = "1.0.0"
+description = "交付前体检：Excel 会不会被算错、方案骨架够不够、稿子改了几轮（可复跑的测量，不是打分）"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "darkknight110" }]
+keywords = ["excel", "audit", "data-quality", "chinese", "proposal", "writing", "delivery", "preflight"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Environment :: Console",
+  "Intended Audience :: End Users/Desktop",
+  "License :: OSI Approved :: MIT License",
+  "Natural Language :: Chinese (Simplified)",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Topic :: Office/Business",
+  "Topic :: Scientific/Engineering :: Information Analysis",
+]
+dependencies = [
+  "openpyxl>=3.1",
+]
+
+[project.optional-dependencies]
+# 只有生成演示 GIF/故事板才需要 Pillow
+demo = ["Pillow>=10"]
+
+[project.urls]
+Homepage = "https://github.com/darkknight110/deliverable-check"
+Issues = "https://github.com/darkknight110/deliverable-check/issues"
+
+[project.scripts]
+preflight = "deliverable_check.preflight:main"
+audit-data = "deliverable_check.audit_data:main"
+proposal-baseline = "deliverable_check.measure_proposals:main"
+ai-flavor = "deliverable_check.measure_ai_flavor:main"
+
+[tool.setuptools.packages.find]
+include = ["deliverable_check*"]

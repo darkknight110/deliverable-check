@@ -6,9 +6,9 @@ import sys
 import unittest
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, os.path.join(os.path.dirname(HERE), "tools"))
+sys.path.insert(0, os.path.dirname(HERE))
 
-import measure_ai_flavor as af  # noqa: E402
+from deliverable_check import measure_ai_flavor as af  # noqa: E402
 
 
 class TestMetrics(unittest.TestCase):
