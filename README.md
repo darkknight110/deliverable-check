@@ -26,6 +26,14 @@ python3 tools/preflight.py 交付目录/ 方案.md
 
 ---
 
+> **同一套三件工具**（可单独用，也可以串起来）：
+>
+> - **[md-to-office](https://github.com/darkknight110/md-to-office)** —— 把 Markdown 变成能发出去的 Word/PDF（真框图、公文模板）
+> - **[deliverable-check](https://github.com/darkknight110/deliverable-check)** —— 发出去之前体检：数据会不会被算错、方案骨架够不够
+> - **[devflow-kit](https://github.com/darkknight110/devflow-kit)** —— 让「能不能发布」由门禁决定，而不是靠感觉
+>
+> 三个都是 MIT、本地运行；本文是 **deliverable-check** 的完整操作指南（安装 → 走一遍 → 排错）。
+
 ## 一行装好
 
 ```bash
@@ -43,7 +51,49 @@ audit-data 明细.xlsx --key-col 订单号
 
 > 演示（GIF/故事板）另需 Pillow：`pip install "deliverable-check[demo] @ git+https://github.com/darkknight110/deliverable-check.git"`。
 
-## 快速开始
+## 5 分钟走一遍（复制即用）
+
+```bash
+# 1) 装（可执行命令，不需要 python 前缀）
+pipx install git+https://github.com/darkknight110/deliverable-check.git
+
+# 2) 造一张"看起来正常、其实会算错"的脏表（30 秒看到效果）
+make-dirty-sample --out /tmp/dirty.xlsx
+
+# 3) 体检
+preflight /tmp/dirty.xlsx
+echo $?        # 期望 1
+```
+
+**期望看到**（数字来自真实计算，不是示例文案）：
+
+```
+⛔ 明细区里有 2 行小计/合计
+⛔ 6 个单元格是「带千分位的文本数字」
+⛔ 「金额（元）」整列求和会放大到 2.76 倍
+结论：⛔ 不可交付（先修阻断项）
+FAIL preflight blocked: 4 blocking findings
+```
+
+```bash
+# 4) 换成你自己的交付物（文件或目录都行）
+preflight 交付/                       # 按扩展名分派：.xlsx → 数据；.md/.docx → 方案
+audit-data 明细.xlsx --key-col 订单号  # 单表深检，--json 可接 CI
+```
+
+**期望**：没有阻断时退出码 0；有阻断时 1。**退出码就是给门禁/CI 用的接口**，不需要解析文字。
+
+### 排错
+
+| 现象 | 原因 | 处理 |
+|---|---|---|
+| `ModuleNotFoundError: openpyxl` | 用系统 python 直接跑了脚本 | 用 `preflight` 命令；或 `pip install openpyxl` |
+| `没有找到可体检的文件` | 路径指到空目录 | 指到具体文件，或确认交付目录里有 `.xlsx/.md/.docx` |
+| 汇总表被说"放大 2 倍" | 汇总表本来就是明细+合计 | 已降级为提示，不需要改 |
+| `合计与明细对不上` | 小计被算进明细，或合计行被人手改过 | 先看该列「明细合计 vs 合计行」，再决定改哪边 |
+| 比率列没报错 | `GM %`、占比这类列不能求和 | 有意跳过，不是漏检 |
+
+## 命令速查（三个工具）
 
 ```bash
 # 1. 方案基线：量一批 Markdown

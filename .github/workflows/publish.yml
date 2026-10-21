@@ -28,6 +28,7 @@ jobs:
           /tmp/v/bin/pip install -q dist/*.whl
           /tmp/v/bin/preflight --help > /dev/null
           /tmp/v/bin/audit-data --help > /dev/null
+          /tmp/v/bin/make-dirty-sample --help > /dev/null
           /tmp/v/bin/python -c "import deliverable_check; print('version', deliverable_check.__version__)"
       - uses: actions/upload-artifact@v4
         with:

@@ -39,6 +39,7 @@ preflight = "deliverable_check.preflight:main"
 audit-data = "deliverable_check.audit_data:main"
 proposal-baseline = "deliverable_check.measure_proposals:main"
 ai-flavor = "deliverable_check.measure_ai_flavor:main"
+make-dirty-sample = "deliverable_check.make_dirty_fixture:main"
 
 [tool.setuptools.packages.find]
 include = ["deliverable_check*"]
