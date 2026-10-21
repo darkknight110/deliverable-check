@@ -112,6 +112,9 @@ def metrics(text: str) -> dict:
         "lexical_per_1k": {k: per_1k(v, chars) for k, v in lexical.items()},
         "certain_per_1k": per_1k(len(re.findall(CERTAIN, body)), chars),
         "abstract_ratio": round(len(abstract) / max(1, len(sents)), 3),
+        # 排版层：加粗密度。不是"AI 味"的定义，但它是**视觉上最先被察觉**的信号：
+        # 平均每 20 字一个加粗，读起来像 PPT，而不像人在讲一件事。
+        "bold_per_1k": per_1k(len(re.findall(r"\*\*[^*]+\*\*", body)), chars),
     }
 
 
