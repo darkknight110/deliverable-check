@@ -42,6 +42,17 @@ python3 <本技能目录>/tools/preflight.py <文件或目录...>
 - **不许自己编数字**。要引用就引用工具输出里的数，或原始单元格。
 - 修不了的问题，如实写进交付说明（哪一列、哪一行、差多少），不要静默交付。
 
+## 用户想"先试试看"时
+
+不要让他准备自己的数据 —— 现场造一张脏表，30 秒看到拦截效果：
+
+```bash
+make-dirty-sample --out /tmp/dirty.xlsx
+preflight /tmp/dirty.xlsx        # 期望：⛔ 不可交付，退出码 1，含「放大到 2.76 倍」
+```
+
+（`make-dirty-sample` 随包安装；源码方式用 `python3 tools/make_dirty_fixture.py --out /tmp/dirty.xlsx`。）
+
 ## 三个工具单独用时
 
 ```bash
