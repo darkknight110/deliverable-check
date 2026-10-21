@@ -65,7 +65,32 @@ def _num(v):
     return None
 
 
+def _decode(raw: bytes) -> str:
+    """CSV 编码：先 UTF-8（含 BOM），再 GB18030（Excel 中文版默认导出）。"""
+    for enc in ("utf-8-sig", "gb18030"):
+        try:
+            return raw.decode(enc)
+        except UnicodeDecodeError:
+            continue
+    return raw.decode("utf-8", errors="replace")
+
+
+def _csv_rows(path: str) -> tuple[list, str, list]:
+    import csv
+
+    delim = "\t" if path.lower().endswith(".tsv") else ","
+    text = _decode(open(path, "rb").read())
+    rows = list(csv.reader(text.splitlines(), delimiter=delim))
+    width = max((len(r) for r in rows), default=0)
+    rows = [r + [""] * (width - len(r)) for r in rows]
+    return rows, "CSV", []
+
+
 def audit(path: str, sheet: str | None = None, key_col: str | None = None) -> dict:
+    if path.lower().endswith((".csv", ".tsv")):
+        rows, sheet_title, merges = _csv_rows(path)
+        return _audit_rows(path, rows, sheet_title, merges, key_col)
+
     from openpyxl import load_workbook
 
     wb = load_workbook(path, data_only=True)
@@ -86,6 +111,12 @@ def audit(path: str, sheet: str | None = None, key_col: str | None = None) -> di
         ws = wb[max(wb.sheetnames, key=sheet_score)]
 
     rows = [[c.value for c in r] for r in ws.iter_rows()]
+    rows = [r for r in rows if any(_text(v) for v in r)]
+    merges = [str(r) for r in ws.merged_cells.ranges]
+    return _audit_rows(path, rows, ws.title, merges, key_col)
+
+
+def _audit_rows(path, rows, sheet_title, merges, key_col):
     rows = [r for r in rows if any(_text(v) for v in r)]
     findings: list[Finding] = []
     if not rows:
@@ -126,7 +157,6 @@ def audit(path: str, sheet: str | None = None, key_col: str | None = None) -> di
     data = rows[data_start:]
 
     # ── 1. 合并单元格 / 两级表头
-    merges = [str(r) for r in ws.merged_cells.ranges]
     header_rows = head_idx + 1
     merged_in_header = [m for m in merges if any(
         int(re.findall(r"\d+", m)[1]) <= header_rows for _ in [0]
@@ -295,7 +325,7 @@ def audit(path: str, sheet: str | None = None, key_col: str | None = None) -> di
     blocking = [f for f in findings if f.severity == BLOCK]
     return {
         "file": path,
-        "sheet": ws.title,
+        "sheet": sheet_title,
         "rows": len(data),
         "columns": len(header),
         "checksum": checks,

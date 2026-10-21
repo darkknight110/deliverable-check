@@ -88,3 +88,26 @@ class TestRatioColumn(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestCsv(unittest.TestCase):
+    CSV = "订单号,区域,金额(元)\nSO-1,华东,1200\n小计,,1200\nSO-2,华南,800\n合计,,3200\n"
+
+    def _write(self, td, enc):
+        p = os.path.join(td, "表.csv")
+        with open(p, "wb") as fh:
+            fh.write(self.CSV.encode(enc))
+        return p
+
+    def test_csv_utf8_能拦住小计(self):
+        with tempfile.TemporaryDirectory() as td:
+            rep = audit_data.audit(self._write(td, "utf-8"))
+            self.assertEqual(rep["verdict"], "blocked")
+            ids = {f["id"] for f in rep["findings"]}
+            self.assertIn("total-rows-in-data", ids)
+
+    def test_csv_gb18030_能读(self):
+        with tempfile.TemporaryDirectory() as td:
+            rep = audit_data.audit(self._write(td, "gb18030"))
+            self.assertEqual(rep["verdict"], "blocked")
+            self.assertEqual(rep["sheet"], "CSV")

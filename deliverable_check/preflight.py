@@ -6,7 +6,7 @@
 让 agent 只记**一条命令**是另一回事。入口越少，被真正执行的概率越高。
 
 分派规则：
-    .xlsx                       → 数据体检（有阻断则退出码 1）
+    .xlsx / .csv / .tsv         → 数据体检（有阻断则退出码 1）
     .md / .docx                 → 方案结构量测（信息性，不阻断）
     同类型的多个版本（≥2）        → 追加返工分析（相邻版本改动量）
 
@@ -38,7 +38,7 @@ def collect(inputs, excludes=(), max_files=2000):
         if os.path.isdir(item):
             for root, _dirs, files in os.walk(item):
                 for f in files:
-                    if f.lower().endswith((".xlsx", ".md", ".docx")) and not f.startswith("~$"):
+                    if f.lower().endswith((".xlsx", ".csv", ".tsv", ".md", ".docx")) and not f.startswith("~$"):
                         paths.append(os.path.join(root, f))
         elif os.path.isfile(item):
             paths.append(item)
@@ -54,6 +54,8 @@ def classify(paths):
     out = {"xlsx": [], "md": [], "docx": []}
     for p in paths:
         ext = os.path.splitext(p)[1].lower().lstrip(".")
+        if ext in ("csv", "tsv"):
+            ext = "xlsx"
         if ext in out:
             out[ext].append(p)
     return out

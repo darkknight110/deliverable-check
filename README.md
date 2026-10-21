@@ -22,7 +22,7 @@ python3 tools/preflight.py 交付目录/ 方案.md
 |---|---|---|
 | [`tools/measure_proposals.py`](tools/measure_proposals.py) | 这份方案有多少骨架、多少证据、多少断言？ | 结构/行文基线 JSON + [基线报告](docs/proposal-baseline.md) |
 | [`tools/measure_ai_flavor.py`](tools/measure_ai_flavor.py) | 稿子哪些标记在退化？21 个版本到底改了什么？ | 标记密度 + [返工曲线](docs/ai-flavor.md) |
-| [`tools/audit_data.py`](tools/audit_data.py) | 这个 Excel 发出去会不会被算错？ | 阻断/警告清单 + [体检报告](docs/data-audit.md)，`exit 1` 可接 CI |
+| [`tools/audit_data.py`](tools/audit_data.py) | 这张表（`.xlsx` / `.csv` / `.tsv`）发出去会不会被算错？ | 阻断/警告清单 + [体检报告](docs/data-audit.md)，`exit 1` 可接 CI |
 
 ---
 
@@ -81,6 +81,7 @@ preflight 交付/                       # 按扩展名分派：.xlsx → 数据�
 preflight 交付/ --exclude '*草稿*'      # 排除临时文件（glob 可重复）
 preflight 交付/ --max-files 500         # 大目录限流，超出会提示（不静默扫全盘）
 audit-data 明细.xlsx --key-col 订单号  # 单表深检，--json 可接 CI
+audit-data 客户发来的.csv              # CSV/TSV 也支持：自动识别 UTF-8 / GB18030
 preflight --version                    # 版本（报 bug 时先看这个）
 ```
 
