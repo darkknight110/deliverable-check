@@ -1,0 +1,29 @@
+# 自证：三个工具的单测 + 脏表必须被拦（不许"看着像在测"）
+name: test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ['3.9', '3.11']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: 依赖（仅数据体检需要）
+        run: python -m pip install -q openpyxl
+      - name: 单元测试
+        run: python -m unittest discover -s tests -v
+      - name: 脏表必须阻断（负向对照）
+        run: |
+          python tools/make_dirty_fixture.py --out /tmp/dirty.xlsx
+          if python tools/audit_data.py /tmp/dirty.xlsx; then
+            echo "脏表竟然算作可交付 —— 检查器失效"; exit 1
+          fi
