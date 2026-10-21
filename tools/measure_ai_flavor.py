@@ -61,6 +61,31 @@ def extract_docx(path: str) -> str:
     return "\n".join(parts)
 
 
+def docx_to_markdown(path: str) -> str:
+    """DOCX → 近似 Markdown（标题按样式补 `#`，表格按 `|` 展开）。
+
+    为什么不是简单抽纯文本：方案的结构指标（二级章节数）只能从标题层级来，
+    丢样式就等于把"结构"这一维度整个抹掉——那会让 docx 的结构指标恒为 0。
+    """
+    import docx
+
+    d = docx.Document(path)
+    out = []
+    for p in d.paragraphs:
+        text = p.text.strip()
+        if not text:
+            continue
+        style = (p.style.name if p.style else "") or ""
+        m = re.match(r"Heading (\d)", style, re.I)
+        out.append(("#" * int(m.group(1)) + " " + text) if m else text)
+    for t in d.tables:
+        for row in t.rows:
+            cells = [c.text.strip().replace("\n", " ") for c in row.cells]
+            if any(cells):
+                out.append("| " + " | ".join(cells) + " |")
+    return "\n".join(out)
+
+
 def load_text(path: str) -> str:
     return extract_docx(path) if path.lower().endswith(".docx") else read_text(path)
 

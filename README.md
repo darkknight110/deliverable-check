@@ -5,6 +5,14 @@
 
 全部是**可复跑的测量**，不是打分器。
 
+**一条命令跑完**（按文件类型自动分派）：
+
+```bash
+python3 tools/preflight.py 交付目录/ 方案.md
+```
+
+也可以作为 **Agent Skill** 安装（`SKILL.md` 已就位）：让 agent 在任何"发出去"的动作之前自动跑一次。
+
 | 工具 | 回答什么问题 | 产出 |
 |---|---|---|
 | [`tools/measure_proposals.py`](tools/measure_proposals.py) | 这份方案有多少骨架、多少证据、多少断言？ | 结构/行文基线 JSON + [基线报告](docs/proposal-baseline.md) |
@@ -57,13 +65,27 @@ python3 tools/audit_data.py 交付表.xlsx --key-col 订单号
 
 ---
 
+## 作为 Agent Skill 安装
+
+把整个目录放进 agent 的技能根目录即可。两种装法：
+
+```bash
+# 全局（所有项目可用）
+git clone https://github.com/darkknight110/deliverable-check.git ~/.dsh/skills/deliverable-check
+
+# 只给当前项目（优先级更高，rank 100）
+git clone https://github.com/darkknight110/deliverable-check.git .dsh/skills/deliverable-check
+```
+
+装好后，agent 在用户说「这个表能发吗」「这版方案能交吗」时会自动加载本技能，先跑 `preflight.py` 再回答。
+
 ## 测试
 
 ```bash
 python3 -m unittest discover -s tests -v
 ```
 
-25 个用例，覆盖：三类事故的检出、干净表不误报、比率列跳过、标记计数、版本排序与返工量。
+37 个用例，覆盖：三类事故的检出、干净表不误报、比率列跳过、标记计数、版本排序与返工量。
 
 ---
 
