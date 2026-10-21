@@ -5,13 +5,15 @@ on:
   push:
     branches: [main]
   pull_request:
+  schedule:
+    - cron: '0 3 * * *'
 
 jobs:
   unit:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python: ['3.9', '3.11']
+        python: ['3.9', '3.11', '3.12', '3.13']
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
