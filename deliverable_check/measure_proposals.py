@@ -158,9 +158,12 @@ def _redact_path(path: str) -> str:
 
 
 def main() -> int:
+    from . import __version__, utf8_stdio
+    utf8_stdio()
     from . import utf8_stdio
     utf8_stdio()
     ap = argparse.ArgumentParser(description="量测中文技术方案的结构与行文")
+    ap.add_argument("--version", action="version", version=f"deliverable-check {__version__}")
     ap.add_argument("inputs", nargs="+", help="Markdown 文件或目录")
     ap.add_argument("--out", help="输出 JSON")
     ap.add_argument("--json-only", action="store_true")

@@ -166,9 +166,12 @@ def _redact_path(path: str) -> str:
 
 
 def main() -> int:
+    from . import __version__, utf8_stdio
+    utf8_stdio()
     from . import utf8_stdio
     utf8_stdio()
     ap = argparse.ArgumentParser(description="量测 AI 味标记与版本返工量")
+    ap.add_argument("--version", action="version", version=f"deliverable-check {__version__}")
     ap.add_argument("inputs", nargs="+", help="目录或 .md/.docx 文件")
     ap.add_argument("--out", help="输出 JSON")
     ap.add_argument("--json-only", action="store_true")

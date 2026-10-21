@@ -67,6 +67,8 @@ def main() -> int:
     utf8_stdio()
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", default="/tmp/dirty-orders.xlsx")
+    from . import __version__
+    ap.add_argument("--version", action="version", version=f"deliverable-check {__version__}")
     args = ap.parse_args()
     out = build(args.out)
     print(out)
