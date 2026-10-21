@@ -186,6 +186,11 @@ python3 -m unittest discover -s tests -v
 
 ---
 
+## 延伸阅读
+
+- [你的 Excel 求和可能放大了 176%，而且不会报错](docs/articles/excel-sum-176-percent.md)
+  —— 三类"零报错"的失真、四步自查、以及为什么汇总表不该按明细表体检。
+
 ## 相关
 
 - **[devflow-kit](https://github.com/darkknight110/devflow-kit)** —— 把"交付前必须过门禁"做成流程；本工具的 `exit 1` 可直接挂上去。
