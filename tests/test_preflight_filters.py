@@ -36,6 +36,12 @@ class TestFilters(unittest.TestCase):
             r = preflight.run([td], max_files=2)
             self.assertEqual(len(r["data"]), 2)
 
+    def test_英文_help(self):
+        import subprocess
+        r = subprocess.run([sys.executable, os.path.join(os.path.dirname(HERE), "tools", "preflight.py"),
+                            "--lang", "en", "--help"], capture_output=True, text=True)
+        self.assertIn("Pre-delivery check", r.stdout)
+
     def test_version_可调用(self):
         from deliverable_check import __version__
         self.assertRegex(__version__, r"^\d+\.\d+\.\d+$")

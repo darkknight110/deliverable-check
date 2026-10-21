@@ -86,6 +86,84 @@ def _csv_rows(path: str) -> tuple[list, str, list]:
     return rows, "CSV", []
 
 
+def audit_docx_tables(path: str) -> dict:
+    """Word 表格的数值审计：合计行是否混进明细、文本数字、合计与明细是否对得上。
+
+    Word 里没有单元格类型，只能按文本解析——所以这里**只报能确证的问题**，
+    拿不准的降级为警告，避免在正常文档上乱喊。
+    """
+    import docx
+
+    doc = docx.Document(path)
+    best = None
+    for ti, table in enumerate(doc.tables):
+        rows = [[c.text.strip() for c in r.cells] for r in table.rows]
+        if len(rows) < 2:
+            continue
+        nums = sum(1 for r in rows[1:] for v in r if _num(v) is not None)
+        if best is None or nums > best[0]:
+            best = (nums, ti, rows)
+
+    findings = []
+    if not best or best[0] < 2:
+        return {"file": path, "tables": len(doc.tables), "findings": findings, "verdict": "clean"}
+
+    _score, ti, rows = best
+    header = rows[0]
+    body = rows[1:]
+
+    total_rows = [r for r in body if any(k in " ".join(r) for k in ("合计", "总计", "小计"))]
+    if total_rows:
+        findings.append(asdict(Finding(
+            "docx-total-in-body", BLOCK,
+            f"第 {ti + 1} 张表的合计行混在明细里",
+            "求整列时会把合计再算一遍",
+            {"rows": len(total_rows)},
+        )))
+
+    text_numbers = 0
+    for r in body:
+        for v in r:
+            if _num(v) is not None and _text(v) != v.replace(",", "").replace(" ", ""):
+                text_numbers += 1
+    if text_numbers:
+        findings.append(asdict(Finding(
+            "docx-text-number", WARN,
+            f"第 {ti + 1} 张表有 {text_numbers} 个带格式的数字",
+            "Word 里是文本，脚本读取时可能被当 0",
+            {"count": text_numbers},
+        )))
+
+    # 合计校验：找数值列，比较「明细求和」与「合计行」
+    detail = [r for r in body if r not in total_rows]
+    width = min(len(header), max((len(r) for r in body), default=0))
+    for ci in range(width):
+        vals = [_num(r[ci]) for r in detail if ci < len(r)]
+        vals = [v for v in vals if v is not None]
+        if len(vals) < 2:
+            continue
+        stated = None
+        for r in total_rows:
+            if ci < len(r):
+                stated = _num(r[ci])
+                if stated is not None:
+                    break
+        if stated is None:
+            continue
+        diff = abs(sum(vals) - stated)
+        if diff > max(1.0, abs(stated) * 0.005):
+            findings.append(asdict(Finding(
+                "docx-total-mismatch", BLOCK,
+                f"第 {ti + 1} 张表「{header[ci]}」合计对不上",
+                f"明细 {sum(vals):,.2f} vs 合计 {stated:,.2f}",
+                {"detail": round(sum(vals), 2), "stated": stated, "diff": round(diff, 2)},
+            )))
+            break
+
+    return {"file": path, "tables": len(doc.tables), "findings": findings,
+            "verdict": "blocked" if any(f["severity"] == "block" for f in findings) else "clean"}
+
+
 def audit(path: str, sheet: str | None = None, key_col: str | None = None) -> dict:
     if path.lower().endswith((".csv", ".tsv")):
         rows, sheet_title, merges = _csv_rows(path)

@@ -24,6 +24,8 @@ classifiers = [
 ]
 dependencies = [
   "openpyxl>=3.1",
+  # .docx 的结构量测与表格审计都要它；之前漏声明，pipx 用户读 .docx 会 ImportError
+  "python-docx>=1.1",
 ]
 
 [project.optional-dependencies]

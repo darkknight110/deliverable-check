@@ -139,6 +139,22 @@ def run(inputs, excludes=(), max_files=2000):
         if r.get("verdict") == "blocked":
             report["verdict"] = "blocked"
 
+    # Word 表格里的数字：结构量测看不到，单独审
+    for p in groups["docx"]:
+        try:
+            t = audit_data.audit_docx_tables(p)
+        except Exception as exc:
+            t = {"verdict": "warn", "findings": [{"severity": "warn", "title": f"表格无法审计：{exc}"}]}
+        report.setdefault("docx_tables", []).append({
+            "file": p,
+            "tables": t.get("tables"),
+            "verdict": t.get("verdict"),
+            "blocking": [f["title"] for f in t.get("findings", []) if f["severity"] == "block"],
+            "warnings": [f["title"] for f in t.get("findings", []) if f["severity"] == "warn"],
+        })
+        if t.get("verdict") == "blocked":
+            report["verdict"] = "blocked"
+
     report["docs"] = doc_metrics(groups["md"] + groups["docx"])
     report["rework"] = rework(groups["md"] + groups["docx"])
     return report
@@ -155,6 +171,15 @@ def render(report) -> str:
             lines.append(f"    {mark} {os.path.basename(d['file'])} [{d['sheet']}] {d['rows']} 行 → {d['verdict']}")
             for t in d["blocking"]:
                 lines.append(f"      ⛔ {t}")
+    if report.get("docx_tables"):
+        lines.append("· Word 表格：")
+        for t in report["docx_tables"]:
+            if not t["tables"]:
+                continue
+            mark = "⛔" if t["verdict"] == "blocked" else ("⚠" if t["warnings"] else "✓")
+            lines.append(f"    {mark} {os.path.basename(t['file'])} {t['tables']} 张表 → {t['verdict']}")
+            for b in t["blocking"]:
+                lines.append(f"      ⛔ {b}")
     if report["docs"]:
         d = report["docs"]
         lines.append(f"· 文档：{d['documents']} 份，中位 {d['chars_median']:.0f} 字 / {d['h2_median']:.0f} 个二级章节 / "
@@ -177,12 +202,22 @@ def render(report) -> str:
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="交付前体检：一个入口，按类型分派")
-    ap.add_argument("inputs", nargs="+", help="文件或目录")
-    ap.add_argument("--json", action="store_true")
-    ap.add_argument("--exclude", action="append", default=[], help="排除的 glob，可重复（如 '*草稿*'）")
-    ap.add_argument("--max-files", type=int, default=2000, help="最多体检多少个文件（默认 2000）")
+    argv = sys.argv[1:]
+    lang = "en" if "--lang" in argv and argv[argv.index("--lang") + 1:argv.index("--lang") + 2] == ["en"] else "zh"
+
+    def _t(zh, en):
+        return en if lang == "en" else zh
+
+    ap = argparse.ArgumentParser(description=_t("交付前体检：一个入口，按类型分派",
+                                                "Pre-delivery check: one entry, dispatched by file type"))
+    ap.add_argument("inputs", nargs="+", help=_t("文件或目录", "Files or directories"))
+    ap.add_argument("--json", action="store_true", help=_t("输出 JSON", "Emit JSON"))
+    ap.add_argument("--exclude", action="append", default=[],
+                    help=_t("排除的 glob，可重复（如 '*草稿*'）", "Exclude glob, repeatable (e.g. '*draft*')"))
+    ap.add_argument("--max-files", type=int, default=2000,
+                    help=_t("最多体检多少个文件（默认 2000）", "Max files to check (default 2000)"))
     from . import __version__
+    ap.add_argument("--lang", choices=["zh", "en"], default="zh", help=_t("帮助语言", "Help language"))
     ap.add_argument("--version", action="version", version=f"deliverable-check {__version__}")
     args = ap.parse_args()
 

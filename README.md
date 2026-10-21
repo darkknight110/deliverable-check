@@ -34,6 +34,8 @@ python3 tools/preflight.py 交付目录/ 方案.md
 >
 > 三个都是 MIT、本地运行；本文是 **deliverable-check** 的完整操作指南（安装 → 走一遍 → 排错）。
 
+> **平台**：macOS / Linux / Windows（Python ≥ 3.9）。
+
 ## 一行装好
 
 ```bash
@@ -83,6 +85,7 @@ preflight 交付/ --max-files 500         # 大目录限流，超出会提示（
 audit-data 明细.xlsx --key-col 订单号  # 单表深检，--json 可接 CI
 audit-data 客户发来的.csv              # CSV/TSV 也支持：自动识别 UTF-8 / GB18030
 preflight --version                    # 版本（报 bug 时先看这个）
+preflight --lang en 交付/               # 英文帮助/提示（正文输出仍为中文）
 ```
 
 **期望**：没有阻断时退出码 0；有阻断时 1。**退出码就是给门禁/CI 用的接口**，不需要解析文字。
