@@ -20,6 +20,13 @@ jobs:
         run: python -m pip install -q openpyxl python-docx
       - name: 单元测试
         run: python -m unittest discover -s tests -v
+      - name: Windows 冒烟（脏表必须阻断）
+        shell: pwsh
+        run: |
+          python tools/make_dirty_fixture.py --out dirty.xlsx
+          python tools/preflight.py dirty.xlsx
+          if ($LASTEXITCODE -ne 1) { throw "退出码应为 1，实际 $LASTEXITCODE" }
+          Write-Host "Windows 冒烟 OK"
 
   unit:
     runs-on: ubuntu-latest

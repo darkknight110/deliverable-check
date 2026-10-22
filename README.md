@@ -35,6 +35,7 @@ python3 tools/preflight.py 交付目录/ 方案.md
 > 三个都是 MIT、本地运行；本文是 **deliverable-check** 的完整操作指南（安装 → 走一遍 → 排错）。
 
 > **平台**：macOS / Linux / Windows（Python ≥ 3.9）。
+> Windows 上已跑「脏表必须阻断」冒烟；Excel 由 openpyxl 读，不依赖 Office 是否安装。
 
 ## 一行装好
 
