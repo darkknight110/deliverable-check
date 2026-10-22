@@ -39,9 +39,8 @@ python3 tools/preflight.py 交付目录/ 方案.md
 ## 一行装好
 
 ```bash
-pipx install git+https://github.com/darkknight110/deliverable-check.git
-# 或者：uv tool install git+https://github.com/darkknight110/deliverable-check.git
-# PyPI 首发后即可：pipx install deliverable-check
+pipx install deliverable-check     # 已发布到 PyPI
+# 或者：uv tool install deliverable-check
 ```
 
 装完直接跑（不需要 `python` 前缀）：
@@ -51,13 +50,13 @@ preflight 交付/                     # 一个入口，按文件类型分派
 audit-data 明细.xlsx --key-col 订单号
 ```
 
-> 演示（GIF/故事板）另需 Pillow：`pip install "deliverable-check[demo] @ git+https://github.com/darkknight110/deliverable-check.git"`。
+> 演示（GIF/故事板）另需 Pillow：`pipx install "deliverable-check[demo]"`。
 
 ## 5 分钟走一遍（复制即用）
 
 ```bash
 # 1) 装（可执行命令，不需要 python 前缀）
-pipx install git+https://github.com/darkknight110/deliverable-check.git
+pipx install deliverable-check
 
 # 2) 造一张"看起来正常、其实会算错"的脏表（30 秒看到效果）
 make-dirty-sample --out /tmp/dirty.xlsx

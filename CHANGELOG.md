@@ -1,5 +1,9 @@
 # 更新记录
 
+## 1.0.2
+
+- 发布到 PyPI：`pipx install deliverable-check`（README 安装命令同步更新）
+
 ## 1.0.1
 
 - `preflight` 增加 Word 表格数值审计（合计混明细、带格式数字、合计对不上）
