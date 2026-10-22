@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "deliverable-check"
-version = "1.0.0"
+version = "1.0.1"
 description = "交付前体检：Excel 会不会被算错、方案骨架够不够、稿子改了几轮（可复跑的测量，不是打分）"
 readme = "README.md"
 requires-python = ">=3.9"

@@ -1,5 +1,12 @@
 # 更新记录
 
+## 1.0.1
+
+- `preflight` 增加 Word 表格数值审计（合计混明细、带格式数字、合计对不上）
+- 全部入口命令补 `--version`；`--lang en` 英文帮助
+- 修 Windows 控制台非 UTF-8 时打印符号崩溃
+- 发布流程加 `twine check`，上传前先验元数据
+
 ## 1.0.0
 
 首个可安装版本（`pipx install git+…`）。
