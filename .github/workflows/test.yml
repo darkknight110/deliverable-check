@@ -27,6 +27,7 @@ jobs:
           python tools/preflight.py dirty.xlsx
           if ($LASTEXITCODE -ne 1) { throw "退出码应为 1，实际 $LASTEXITCODE" }
           Write-Host "Windows 冒烟 OK"
+          exit 0
 
   unit:
     runs-on: ubuntu-latest
